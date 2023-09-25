@@ -136,14 +136,14 @@ $(function () {
         numberedStepper.previous();
       });
 
-    $(horizontalWizard)
-      .find('.btn-submit')
-      .on('click', function () {
-        var isValid = $(this).parent().siblings('form').valid();
-        if (isValid) {
-          alert('Submitted..!!');
-        }
-      });
+    // $(horizontalWizard)
+    //   .find('.btn-submit')
+    //   .on('click', function () {
+    //     var isValid = $(this).parent().siblings('form').valid();
+    //     if (isValid) {
+    //       alert('Submitted..!!');
+    //     }
+    //   });
   }
 
   // Vertical Wizard
@@ -163,11 +163,11 @@ $(function () {
         verticalStepper.previous();
       });
 
-    $(verticalWizard)
-      .find('.btn-submit')
-      .on('click', function () {
-        alert('Submitted..!!');
-      });
+    // $(verticalWizard)
+    //   .find('.btn-submit')
+    //   .on('click', function () {
+    //     alert('Submitted..!!');
+    //   });
   }
 
   // Modern Wizard
@@ -187,11 +187,11 @@ $(function () {
         modernStepper.previous();
       });
 
-    $(modernWizard)
-      .find('.btn-submit')
-      .on('click', function () {
-        alert('Submitted..!!');
-      });
+    // $(modernWizard)
+    //   .find('.btn-submit')
+    //   .on('click', function () {
+    //     alert('Submitted..!!');
+    //   });
   }
 
   // Modern Vertical Wizard
@@ -211,10 +211,10 @@ $(function () {
         modernVerticalStepper.previous();
       });
 
-    $(modernVerticalWizard)
-      .find('.btn-submit')
-      .on('click', function () {
-        alert('Submitted..!!');
-      });
+    // $(modernVerticalWizard)
+    //   .find('.btn-submit')
+    //   .on('click', function () {
+    //     alert('Submitted..!!');
+    //   });
   }
 });

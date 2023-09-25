@@ -58,7 +58,7 @@
             </div>
             <ul class="nav navbar-nav align-items-center ms-auto">
                 <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">John Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="/static/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">{{user_data[1]}}</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="/static/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a class="dropdown-item" href="#"><i class="me-50" data-feather="user"></i> Profile</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="mail"></i> Inbox</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="check-square"></i> Task</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="message-square"></i> Chats</a>
                         <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="me-50" data-feather="settings"></i> Settings</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="credit-card"></i> Pricing</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="help-circle"></i> FAQ</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="power"></i> Logout</a>
@@ -201,7 +201,9 @@
                 <!-- Vertical Wizard -->
                 <section class="vertical-wizard">
                     <div class="bs-stepper vertical vertical-wizard-example">
+                        
                         <div class="bs-stepper-header">
+                           
                             <div class="step" data-target="#account-details-vertical" role="tab" id="account-details-vertical-trigger">
                                 <button type="button" class="step-trigger">
                                     <span class="bs-stepper-box">1</span>
@@ -230,7 +232,7 @@
                                 </button>
                             </div>
                             <div class="step" data-target="#social-links-vertical" role="tab" id="social-links-vertical-trigger">
-                                <button type="button" class="step-trigger">
+                                <button type="submit" class="step-trigger">
                                     <span class="bs-stepper-box">4</span>
                                     <span class="bs-stepper-label">
                                         <span class="bs-stepper-title">Social Links</span>
@@ -238,8 +240,10 @@
                                     </span>
                                 </button>
                             </div>
+                        
                         </div>
                         <div class="bs-stepper-content">
+                            <form action="/user_record1" method="post">
                             <div id="account-details-vertical" class="content" role="tabpanel" aria-labelledby="account-details-vertical-trigger">
                                 <div class="content-header">
                                     <h5 class="mb-0">Account Details</h5>
@@ -248,34 +252,28 @@
                                 <div class="row">
                                     <div class="mb-1 col-md-6">
                                         <label class="form-label" for="vertical-username">Username</label>
-                                        <input type="text" id="vertical-username" class="form-control" placeholder="johndoe" />
+                                        <input type="text" name="user_name" value="{{user_data[1]}}" id="vertical-username" class="form-control" placeholder="johndoe" />
                                     </div>
                                     <div class="mb-1 col-md-6">
                                         <label class="form-label" for="vertical-email">Email</label>
-                                        <input type="email" id="vertical-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
+                                        <input type="email" name="email" value="{{user_data[2]}}" id="vertical-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="mb-1 form-password-toggle col-md-6">
                                         <label class="form-label" for="vertical-password">Password</label>
-                                        <input type="password" id="vertical-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                                        <input type="password" name="password"  value="{{user_data[3]}}" id="vertical-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
                                     </div>
                                     <div class="mb-1 form-password-toggle col-md-6">
-                                        <label class="form-label" for="vertical-confirm-password">Confirm Password</label>
-                                        <input type="password" id="vertical-confirm-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                                        <label class="form-label" for="vertical-confirm-password">Mobile no</label>
+                                        <input type="number" name="number"  value="{{user_data[4]}}" id="vertical-confirm-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-outline-secondary btn-prev" disabled>
-                                        <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
-                                        <span class="align-middle d-sm-inline-block d-none">Previous</span>
-                                    </button>
-                                    <button class="btn btn-primary btn-next">
-                                        <span class="align-middle d-sm-inline-block d-none">Next</span>
-                                        <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-                                    </button>
-                                </div>
+                                <button type="submit" class="btn btn-success btn-submit">Submit</button>
                             </div>
+                            
+                            </form>
+                            <form action="/user_record2" method="post">
                             <div id="personal-info-vertical" class="content" role="tabpanel" aria-labelledby="personal-info-vertical-trigger">
                                 <div class="content-header">
                                     <h5 class="mb-0">Personal Info</h5>
@@ -313,17 +311,10 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary btn-prev">
-                                        <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
-                                        <span class="align-middle d-sm-inline-block d-none">Previous</span>
-                                    </button>
-                                    <button class="btn btn-primary btn-next">
-                                        <span class="align-middle d-sm-inline-block d-none">Next</span>
-                                        <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-                                    </button>
-                                </div>
+                                <button type="submit" class="btn btn-success btn-submit">Submit</button>
                             </div>
+                            </form>
+                            <form action="/user_record3" method="post">
                             <div id="address-step-vertical" class="content" role="tabpanel" aria-labelledby="address-step-vertical-trigger">
                                 <div class="content-header">
                                     <h5 class="mb-0">Address</h5>
@@ -349,17 +340,11 @@
                                         <input type="text" id="city2" class="form-control" placeholder="Birmingham" />
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary btn-prev">
-                                        <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
-                                        <span class="align-middle d-sm-inline-block d-none">Previous</span>
-                                    </button>
-                                    <button class="btn btn-primary btn-next">
-                                        <span class="align-middle d-sm-inline-block d-none">Next</span>
-                                        <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-                                    </button>
-                                </div>
+                                <button type="submit" class="btn btn-success btn-submit">Submit</button>
+                               
                             </div>
+                            </form>
+                            <form action="/user_record4" method="post">
                             <div id="social-links-vertical" class="content" role="tabpanel" aria-labelledby="social-links-vertical-trigger">
                                 <div class="content-header">
                                     <h5 class="mb-0">Social Links</h5>
@@ -385,15 +370,13 @@
                                         <input type="text" id="vertical-linkedin" class="form-control" placeholder="https://linkedin.com/abc" />
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary btn-prev">
-                                        <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
-                                        <span class="align-middle d-sm-inline-block d-none">Previous</span>
-                                    </button>
-                                    <button class="btn btn-success btn-submit">Submit</button>
-                                </div>
+                                
+                                    <button type="submit" class="btn btn-success btn-submit">Submit</button>
+                                
                             </div>
+                            </form>
                         </div>
+                        
                     </div>
                 </section>
                 <!-- /Vertical Wizard -->
