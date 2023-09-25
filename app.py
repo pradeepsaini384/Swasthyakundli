@@ -6,11 +6,14 @@ app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 
-@app.route('/')
+@app.route('/User')
 def home():
-    return render_template('index.html')
+    return render_template('/user/index.html',name="Pradeep Saini")
+
+@app.route('/User/<Name>')
+def user_page(Name):
+    return render_template(f"/user/{Name}.html",name="Pradeep Saini")
 
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run()

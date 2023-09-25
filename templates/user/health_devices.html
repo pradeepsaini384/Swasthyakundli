@@ -1,0 +1,155 @@
+{% extends '/user/base.html' %}
+{% block body %}
+ <!-- BEGIN: Main Menu-->
+ <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item me-auto"><a class="navbar-brand" href="index.html">
+                <span class="brand-logo">
+                    <!-- <img src="/static/app-assets/images/logo/logo.png" alt="logo"> -->
+                    </span>
+                    <h2 class="brand-text">Swasthyakundli</h2>
+                </a></li>
+        </ul>
+    </div>
+    <div class="shadow-bottom"></div>
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User">
+                    <i data-feather="home"></i>
+                    <span class="menu-title text-truncate" data-i18n="Home">Dashboard</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/record">
+                    <i data-feather="clipboard"></i>
+                    <span class="menu-title text-truncate" data-i18n="Record Your Health Data">Record Your Health Data</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_history">
+                    <i data-feather="book"></i>
+                    <span class="menu-title text-truncate" data-i18n="Health History">Health History</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/family_health_tree">
+                    <i data-feather='list'></i>
+                    <span class="menu-title text-truncate" data-i18n="Family Health Tree">Family Health Tree</span>
+                </a>
+            </li>
+            
+            <li class="  nav-item">
+                <a class="d-flex align-items-center" href="/User/care_centers">
+                    <i data-feather='plus-square'></i>
+                    <span class="menu-title text-truncate" data-i18n="Care Centers">Care Centers</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/care_team">
+                    <i data-feather="users"></i>
+                    <span class="menu-title text-truncate" data-i18n="Your Care Team">Your Care Team</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/coverage_benefits">
+                    <i data-feather="shield"></i>
+                    <span class="menu-title text-truncate" data-i18n="Coverage Benefits">Coverage Benefits</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/community_support">
+                    <i data-feather="heart"></i>
+                    <span class="menu-title text-truncate" data-i18n="Community Support">Community Support</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/healthcare_policies">
+                    <i data-feather="file-text"></i>
+                    <span class="menu-title text-truncate" data-i18n="Healthcare Policies">Healthcare Policies</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_tips">
+                    <i data-feather='cpu'></i>
+                    <span class="menu-title text-truncate" data-i18n="Smart Health Tips">Smart Health Tips</span>
+                </a>
+            </li>
+            
+            <li class="active nav-item">
+                <a class="d-flex align-items-center" href="/User/health_devices">
+                    <i data-feather='watch'></i>
+                    <span class="menu-title text-truncate" data-i18n="Connect Health Devices">Connect Health Devices</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/contact_us">
+                    <i data-feather='phone'></i>
+                    <span class="menu-title text-truncate" data-i18n="Get in Touch">Get in Touch</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+<!-- END: Main Menu-->
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">Connect Health Devices</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="health-devices.html">Connect Health Devices</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">Health-Devices
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <!-- Under maintenance-->
+                <div class="misc-wrapper">
+                    <div class="misc-inner p-2 p-sm-3">
+                        <div class="w-100 text-center">
+                            <h2 class="mb-1">Under Maintenance 🛠</h2>
+                            <p class="mb-3">Sorry for the inconvenience but we're performing some maintenance at the moment</p>
+                            <form class="row row-cols-md-auto row justify-content-center align-items-center m-0 mb-2 gx-3" action="javascript:void(0)">
+                                <div class="col-12 m-0 mb-1">
+                                    <input class="form-control" id="notify-email" type="text" placeholder="john@example.com" />
+                                </div>
+                                <div class="col-12 d-md-block d-grid ps-md-0 ps-auto">
+                                    <button class="btn btn-primary mb-1 btn-sm-block" type="submit">Notify</button>
+                                </div>
+                            </form><img class="img-fluid" src="/static/app-assets/images/pages/under-maintenance.svg" alt="Under maintenance page" />
+                        </div>
+                    </div>
+                </div>
+                <!-- / Under maintenance-->
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+   {% endblock %}
