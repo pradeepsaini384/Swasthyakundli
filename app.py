@@ -1,5 +1,7 @@
 from flask import Flask,render_template ,Response,redirect,request,flash,url_for,Request,session
-from sql import authentication
+from sql import authentication,registration,partnership_form
+from ai import call_ai
+
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
@@ -17,6 +19,11 @@ def Website_Contact():
 @app.route('/login')
 def login():
     return render_template('/website/login.html')
+
+@app.route('/patnership')
+def patnership():
+
+    return render_template('website/patnership.html')
 #-----------------------user login ------------
 @app.route('/login',methods = ['GET','POST'])
 def user_login():
@@ -24,7 +31,7 @@ def user_login():
     password = request.form.get("password")
     
     user_data =  authentication(name,password)
-    
+    print(user_data)
     
     if(len(user_data)>0):
             session['user_data'] = user_data[0]
@@ -36,9 +43,23 @@ def user_login():
 @app.route('/user/signup')
 def user_signup():
     return render_template('/website/signup.html')
-@app.route('/appointment')
+@app.route('/patnership',methods = ['GET','POST'])
 def appointment():
-    return render_template('/website/appointment.html')
+    name = request.form.get("name")
+    type = request.form.get("type")
+    email= request.form.get("email")
+    mobile_no = request.form.get("number")
+    message = request.form.get("message")
+    list = [name,email,type,mobile_no,message]
+    resp = partnership_form(list)
+    if resp== 202:
+        disp_message= "Thank You. We Will Reach Out You Soon"
+        color = 'green'
+        return render_template('/website/appointment.html',disp_message=disp_message,c = color)
+    else:
+        disp_message= "Something Went Wrong"
+        color = 'red'
+        return render_template('/website/appointment.html',disp_message=disp_message,c =color)
 
 
 #-----------users--------------------
@@ -63,5 +84,30 @@ def user_record1():
     
     return 'done'
 
+#----------------------user registration---------------
+@app.route('/register_data',methods = ['GET','POST'])
+def register_data():
+    name = request.form.get("name")
+    password = request.form.get("password")
+    email= request.form.get("email")
+    mobile_no = request.form.get("number")
+    dob = request.form.get("dob")
+    list = [102,name,password,email,mobile_no,dob]
+    print(list)
+    resp = registration(list)
+    if resp == 202 :
+        session['user_data'] = list
+        user_data = session.get('user_data')
+        return render_template('/user/index.html',user_data=user_data)
+    else:
+        return render_template('/website/signup.html')
+#-----------------ai-----------------
+@app.route("/call_ai",methods = ['GET','POST'])
+def ai():
+    query = request.form.get("text")
+    print(query)
+    reponse = call_ai(query)
+
+    return render_template("/user/health_tips.html",user_data=user_data,ai_result=reponse)
 if __name__ == "__main__":
     app.run(debug=True)
