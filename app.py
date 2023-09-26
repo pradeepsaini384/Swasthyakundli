@@ -1,11 +1,15 @@
 from flask import Flask,render_template ,Response,redirect,request,flash,url_for,Request,session
 from sql import authentication,registration,partnership_form
 from ai import call_ai
+import os
+from werkzeug.utils import secure_filename
 
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 user_data = None
+UPLOAD_FOLDER = 'static/images/Reports/'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 #---------------- website Directories ------------------
 @app.route('/')
 def website_home():
@@ -166,7 +170,27 @@ def doctor_ai():
     print(query)
     reponse = call_ai(query)
     return render_template("/doctor/health_tips.html",user_data=user_data,ai_result=reponse)
-
-
+@app.route('/save_record',methods=['GET','POST'])
+def save_record():
+    report_data = request.form.get("report_data")
+    date = request.form.get("date")
+    Report_info = request.form.get("Report_info")
+    Doctors_info = request.form.get("Doctors_info")
+    report_status = request.form.get("customColorRadio")
+    patient_reports = request.files['patient_reports']
+    print(report_data)
+    if patient_reports:
+        # resized_image = Image.open(file)
+        # resized_image = resized_image.resize((300,230))
+        user_data2 = "pradeep"
+        path = app.config['UPLOAD_FOLDER']+f'{user_data2}'
+        print(path)
+        if not os.path.exists(path):
+            os.makedirs(path)
+        filename = secure_filename(patient_reports.filename)
+        patient_reports.save(os.path.join(path, filename))
+        filedic = path+filename
+        print(filedic)
+        return "ok"
 if __name__ == "__main__":
     app.run(debug=True)
