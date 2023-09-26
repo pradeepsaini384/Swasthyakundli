@@ -122,35 +122,9 @@ def doctor_page(Name):
     # user_data = session.get('user_data')
     return render_template(f"/doctor/{Name}.html")
 
-
-# @app.route('/health_history')
-# def health_history():
-    
-#     return render_template('/doctor/health-history.html')
-
-# @app.route('/family_health_tree')
-# def family_health_tree():
-    
-#     return render_template('/doctor/family-health-tree.html')
-# @app.route('/health_tips')
-# def health_tips():
-    
-#     return render_template('/doctor/health-tips.html')
-# @app.route('/disease_blog')
-# def disease_blog():
-    
-#     return render_template('/doctor/disease-blog.html')
-
-# @app.route('/faq')
-# def faq():
-    
-#     return render_template('/doctor/faq.html')
-
-# @app.route('/health_devices')
-# def health_devices():
-    
-#     return render_template('/doctor/health_devices.html')
-
+@app.route('/admin/<Name>')
+def admin_routing(Name):
+    return render_template(f'/admin/{Name}.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
