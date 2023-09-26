@@ -16,16 +16,22 @@ def Website_Contact():
     return render_template('/website/contact.html')
 
 
-@app.route('/login')
-def login():
-    return render_template('/website/login.html')
+@app.route('/user_login_page')
+def user_login_page():
+    return render_template('/website/user-login.html')
+@app.route('/doctor_login_page')
+def doctor_login_page():
+    return render_template('/website/doctor-login.html')
+@app.route('/admin_login_page')
+def admin_login_page():
+    return render_template('/website/admin-login.html')
 
-@app.route('/patnership')
+@app.route('/appointment')
 def patnership():
 
-    return render_template('website/patnership.html')
+    return render_template('website/appointment.html')
 #-----------------------user login ------------
-@app.route('/login',methods = ['GET','POST'])
+@app.route('/user_login',methods = ['GET','POST'])
 def user_login():
     name = request.form.get("email")
     password = request.form.get("password")
@@ -37,6 +43,34 @@ def user_login():
             session['user_data'] = user_data[0]
             user_data = session.get('user_data')
             return render_template('/user/index.html',user_data=user_data)
+
+    return redirect(url_for('login'))
+@app.route('/doctor_login',methods = ['GET','POST'])
+def doctor_login():
+    name = request.form.get("email")
+    password = request.form.get("password")
+    
+    user_data =  authentication(name,password)
+    print(user_data)
+    
+    if(len(user_data)>0):
+            session['user_data'] = user_data[0]
+            user_data = session.get('user_data')
+            return render_template('/doctor/index.html',user_data=user_data)
+
+    return redirect(url_for('login'))
+@app.route('/admin_login',methods = ['GET','POST'])
+def admin_login():
+    name = request.form.get("email")
+    password = request.form.get("password")
+    
+    user_data =  authentication(name,password)
+    print(user_data)
+    
+    if(len(user_data)>0):
+            session['user_data'] = user_data[0]
+            user_data = session.get('user_data')
+            return render_template('/admin/index.html',user_data=user_data)
 
     return redirect(url_for('login'))
 
@@ -125,6 +159,14 @@ def doctor_page(Name):
 @app.route('/admin/<Name>')
 def admin_routing(Name):
     return render_template(f'/admin/{Name}.html')
+
+@app.route("/call_ai_doctor",methods = ['GET','POST'])
+def doctor_ai():
+    query = request.form.get("text")
+    print(query)
+    reponse = call_ai(query)
+    return render_template("/doctor/health_tips.html",user_data=user_data,ai_result=reponse)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

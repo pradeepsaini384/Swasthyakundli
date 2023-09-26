@@ -148,8 +148,28 @@
     }
 }
 
+.welcome-txt{
+    text-align: center;
+    color: #0463fa;
+}
 
 /*** Header ***/
+.bg-primary{
+    background-image: linear-gradient(to right, #577cfe, #66dbfe);
+}
+
+/* text-color: #1b2c51 */
+
+.text-carousel-color{
+    color: #fff;
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
+}
+
+.img-fluid{
+    opacity: 0.9;
+}
+
 .header-carousel .owl-carousel-text {
     position: absolute;
     width: 100%;
@@ -235,7 +255,7 @@
 }
 
 .page-header {
-    background: url(/static/website/img/header-page.jpg) top center no-repeat;
+    background: url(../img/header-page.jpg) top center no-repeat;
     background-size: cover;
     text-shadow: 0 0 30px rgba(0, 0, 0, .1);
 }
