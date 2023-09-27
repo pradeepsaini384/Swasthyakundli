@@ -203,14 +203,14 @@
                                     <h4 class="card-title">Vertical Form with Icons</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form form-vertical">
+                                    <form class="form form-vertical" action="/add_user_from_admin" method="post">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon">First Name</label>
+                                                    <label class="form-label" for="first-name-icon"> Name</label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="user"></i></span>
-                                                        <input type="text" id="first-name-icon" class="form-control" name="fname-icon" placeholder="First Name" />
+                                                        <input type="text" id="first-name-icon" class="form-control" name="name" placeholder="User/Doctor Name" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -219,7 +219,7 @@
                                                     <label class="form-label" for="email-id-icon">Email</label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="mail"></i></span>
-                                                        <input type="email" id="email-id-icon" class="form-control" name="email-id-icon" placeholder="Email" />
+                                                        <input type="email" id="email-id-icon" class="form-control" name="email" placeholder="Email" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -228,7 +228,7 @@
                                                     <label class="form-label" for="contact-info-icon">Mobile</label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="smartphone"></i></span>
-                                                        <input type="number" id="contact-info-icon" class="form-control" name="contact-icon" placeholder="Mobile" />
+                                                        <input type="number" id="contact-info-icon" class="form-control" name="number" placeholder="Mobile" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -237,7 +237,7 @@
                                                     <label class="form-label" for="password-icon">Password</label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="lock"></i></span>
-                                                        <input type="password" id="password-icon" class="form-control" name="contact-icon" placeholder="Password" />
+                                                        <input type="password" id="password-icon" class="form-control" name="password" placeholder="Password" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -250,7 +250,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-12">
-                                                <button type="reset" class="btn btn-primary me-1">Submit</button>
+                                                <button type="submit" class="btn btn-primary me-1">Submit</button>
                                                 <button type="reset" class="btn btn-outline-secondary">Reset</button>
                                             </div>
                                         </div>

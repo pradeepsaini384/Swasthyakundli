@@ -183,7 +183,7 @@
                             <h2 class="content-header-title float-start mb-0">Dashboard</h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="/admin/index">Dashboard</a>
+                                    <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item active">Index
                                     </li>
@@ -194,60 +194,232 @@
                 </div>
             </div>
             <div class="content-body">
-                <!-- Kick start -->
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Kick start your next project 🚀</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text">
-                            <p>
-                                Getting start with your project custom requirements using a ready template which is quite difficult and time
-                                taking process, Vuexy Admin provides useful features to kick start your project development with no efforts !
-                            </p>
-                            <ul>
-                                <li>
-                                    Vuexy Admin provides you getting start pages with different layouts, use the layout as per your custom
-                                    requirements and just change the branding, menu &amp; content.
-                                </li>
-                                <li>
-                                    Every components in Vuexy Admin are decoupled, it means use use only components you actually need! Remove
-                                    unnecessary and extra code easily just by excluding the path to specific SCSS, JS file.
-                                </li>
-                            </ul>
+                <section id="dashboard-analytics">
+                    <div class="row match-height">
+                        <!-- Greetings Card starts -->
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                            <div class="card card-congratulations">
+                                <div class="card-body text-center">
+                                    <img src="/static/app-assets/images/elements/decore-left.png" class="congratulations-img-left" alt="card-img-left" />
+                                    <img src="/static/app-assets/images/elements/decore-right.png" class="congratulations-img-right" alt="card-img-right" />
+                                    <div class="avatar avatar-xl bg-primary shadow">
+                                        <div class="avatar-content">
+                                            <i data-feather="award" class="font-large-1"></i>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <h1 class="mb-1 text-white">Welcome, Admin,</h1>
+                                        <p class="card-text m-auto w-75">
+                                            Manage your health app and user data efficiently from this dashboard.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <!-- Greetings Card ends -->
+                    
+                        <!-- Subscribers Chart Card starts -->
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="card">
+                                <div class="card-header flex-column align-items-start pb-0">
+                                    <div class="avatar bg-light-primary p-50 m-0">
+                                        <div class="avatar-content">
+                                            <i data-feather="users" class="font-medium-5"></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="fw-bolder mt-1">   {{users_len}}</h2>
+                                    <p class="card-text">Total Users Subscribers</p>
+                                </div>
+                                <div id="gained-chart"></div>
+                            </div>
+                        </div>
+                        <!-- Subscribers Chart Card ends -->
+                    
+                        <!-- Orders Chart Card starts -->
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="card">
+                                <div class="card-header flex-column align-items-start pb-0">
+                                    <div class="avatar bg-light-warning p-50 m-0">
+                                        <div class="avatar-content">
+                                            <i data-feather="package" class="font-medium-5"></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="fw-bolder mt-1">   {{doctor_len}}</h2>
+                                    <p class="card-text">Total Doctors Subscribers</p>
+                                </div>
+                                <div id="order-chart"></div>
+                            </div>
+                        </div>
+                        <!-- Orders Chart Card ends -->
                     </div>
-                </div>
-                <!--/ Kick start -->
 
-                <!-- Page layout -->
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">What is page layout?</h4>
+                    <div class="row match-height">
+                        <!-- Doctor Timeline Card -->
+                        <div class="col-lg-4 col-12">
+                            <div class="card card-doctor-timeline">
+                                <div class="card-header">
+                                    <div class="d-flex align-items-center">
+                                        <i data-feather="list" class="doctor-timeline-title-icon"></i>
+                                        <h4 class="card-title">Doctor Timeline</h4>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="timeline ms-50">
+                                        <li class="timeline-item">
+                                            <span class="timeline-point timeline-point-indicator"></span>
+                                            <div class="timeline-event">
+                                                <h6>12 Appointments Scheduled</h6>
+                                                <p>New appointments have been scheduled</p>
+                                                <div class="d-flex align-items-center">
+                                                    <img class="me-1" src="/static/app-assets/images/icons/calendar.png" alt="calendar" height="23" />
+                                                    <h6 class="more-info mb-0">Appointments.json</h6>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="timeline-item">
+                                            <span class="timeline-point timeline-point-warning timeline-point-indicator"></span>
+                                            <div class="timeline-event">
+                                                <h6>Patient Consultation</h6>
+                                                <p>Consultation with Patient XYZ</p>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar me-50">
+                                                        <img src="/static/app-assets/images/portrait/small/avatar-s-9.jpg" alt="Avatar" width="38" height="38" />
+                                                    </div>
+                                                    <div class="more-info">
+                                                        <h6 class="mb-0">Patient XYZ</h6>
+                                                        <p class="mb-0">Health Issue: Fever</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- Add more doctor-related timeline events here -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Doctor Timeline Card -->
+                    
+                        <!-- End User Management Card -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-start pb-1">
+                                    <div>
+                                        <h4 class="card-title mb-25">End User Management</h4>
+                                        <p class="card-text">Manage Health Records</p>
+                                    </div>
+                                    <div class="dropdown chart-dropdown">
+                                        <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-bs-toggle="dropdown"></i>
+                                        <div class="dropdown-menu dropdown-menu-end">
+                                            <a class="dropdown-item" href="#">View All Users</a>
+                                            <a class="dropdown-item" href="#">Add New User</a>
+                                            <!-- Add more user management options here -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <!-- User management content goes here -->
+                                    <p class="card-text font-small-2">You can manage and update health records for end-users using this section.</p>
+                                    <button type="button" class="btn btn-primary w-100">Manage Users</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ End User Management Card -->
+                    
+                        <!-- Sales Stats Chart Card starts -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-start pb-1">
+                                    <div>
+                                        <h4 class="card-title mb-25">Sales</h4>
+                                        <p class="card-text">Last 6 months</p>
+                                    </div>
+                                    <div class="dropdown chart-dropdown">
+                                        <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-bs-toggle="dropdown"></i>
+                                        <div class="dropdown-menu dropdown-menu-end">
+                                            <a class="dropdown-item" href="#">Last 28 Days</a>
+                                            <a class="dropdown-item" href="#">Last Month</a>
+                                            <a class="dropdown-item" href="#">Last Year</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-inline-block me-1">
+                                        <div class="d-flex align-items-center">
+                                            <i data-feather="circle" class="font-small-3 text-primary me-50"></i>
+                                            <h6 class="mb-0">Sales</h6>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block">
+                                        <div class="d-flex align-items-center">
+                                            <i data-feather="circle" class="font-small-3 text-info me-50"></i>
+                                            <h6 class="mb-0">Visits</h6>
+                                        </div>
+                                    </div>
+                                    <div id="sales-visit-chart" class="mt-50"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sales Stats Chart Card ends -->
                     </div>
-                    <div class="card-body">
-                        <div class="card-text">
-                            <p>
-                                Starter kit includes pages with different layouts, useful for your next project to start development process
-                                from scratch with no time.
-                            </p>
-                            <ul>
-                                <li>Each layout includes required only assets only.</li>
-                                <li>
-                                    Select your choice of layout from starter kit, customize it with optional changes like colors and branding,
-                                    add required dependency only.
-                                </li>
-                            </ul>
-                            <div class="alert alert-primary" role="alert">
-                                <div class="alert-body">
-                                    <strong>Info:</strong> Please check the &nbsp;<a class="text-primary" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation/documentation-layouts.html#layout-collapsed-menu" target="_blank">Layout documentation</a>&nbsp; for more layout options i.e collapsed menu, without menu, empty & blank.
+                    
+
+                    <!-- List DataTable -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card invoice-list-wrapper">
+                                <div class="card-datatable table-responsive">
+                                    <table class="invoice-list-table table">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>#</th>
+                                                <th><i data-feather="trending-up"></i></th>
+                                                <th>Name</th>
+                                                <th>Total Amount</th>
+                                                <th class="text-truncate">Date</th>
+                                                <th>Payment Status</th>
+                                                <th>Invoice Status</th>
+                                                <th class="cell-fit">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Sample table rows for demonstration -->
+                                            <tr>
+                                                <td></td>
+                                                <td>1</td>
+                                                <td><i data-feather="arrow-up"></i></td>
+                                                <td>John Doe</td>
+                                                <td>$500.00</td>
+                                                <td>2023-09-15</td>
+                                                <td>Paid</td>
+                                                <td>Approved</td>
+                                                <td>
+                                                    <!-- Add action buttons here, e.g., View, Edit, Delete -->
+                                                    <button class="btn btn-sm btn-primary">View</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>2</td>
+                                                <td><i data-feather="arrow-down"></i></td>
+                                                <td>Jane Smith</td>
+                                                <td>$300.00</td>
+                                                <td>2023-09-18</td>
+                                                <td>Due</td>
+                                                <td>Pending</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">View</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!--/ Page layout -->
-
+                    
+                    <!--/ List DataTable -->
+                </section>
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 from flask import Flask,render_template ,Response,redirect,request,flash,url_for,Request,session
-from sql import authentication,registration,partnership_form,patient_record_saving,get_records,admin_authentication,doctor_authentication
+from sql import authentication,registration,partnership_form,patient_record_saving,get_records,admin_authentication,doctor_authentication,admin_registration,return_user_list,user_data_len,doctor_data_len
 from ai import call_ai
 import os
 from werkzeug.utils import secure_filename
@@ -92,7 +92,7 @@ def admin_login():
             admin_data = session.get('admin_data')
             return render_template('/admin/index.html',user_data=admin_data)
 
-    return redirect(url_for('login'))
+    return redirect(url_for('admin_login_page'))
 
 @app.route('/user/signup')
 def user_signup():
@@ -175,6 +175,27 @@ def register_data():
     else:
         return render_template('/website/signup.html')
 #-----------------ai-----------------
+@app.route('/add_user_from_admin',methods = ['GET','POST'])
+def add_user_from_admin():
+    name = request.form.get("name")
+    password = request.form.get("password")
+    email= request.form.get("email")
+    mobile_no = request.form.get("number")
+    # dob = request.form.get("dob")
+    list = [name,password,email,mobile_no,"01/02/2001"]
+    user_data = session.get('admin_data')
+    resp = admin_registration(list)
+    if resp == 202 :
+        color = "green"
+        message = "New Record Added !"
+        users_data = return_user_list()
+        print(users_data)
+        return render_template('/admin/user_list.html',user_data=user_data,users_data=users_data,color=color,message=message)
+    else:
+        color = "red"
+        message = "Getting Some Error To add User !"
+        return render_template('/admin/user_list.html',user_data=user_data,color=color,message=message)
+#-----------------ai-----------------
 @app.route("/call_ai",methods = ['GET','POST'])
 def ai():
     query = request.form.get("text")
@@ -199,8 +220,17 @@ def doctor_page(Name):
 
 @app.route('/admin/<Name>')
 def admin_routing(Name):
+
     admin_data = session.get('admin_data')
-    return render_template(f'/admin/{Name}.html',user_data=admin_data)
+    if Name == 'user_list':
+        users_data = return_user_list()
+        
+        return render_template(f'/admin/{Name}.html',user_data=admin_data,users_data=users_data)
+    if Name == "index":
+        users_len = user_data_len()
+        doctor_len = doctor_data_len()
+        return render_template(f'/admin/{Name}.html',user_data=admin_data,users_len=users_len[0][0],doctor_len=doctor_len[0][0])
+    return render_template(f'/admin/{Name}.html',user_data=admin_data,users_data=admin_data)
 
 @app.route("/call_ai_doctor",methods = ['GET','POST'])
 def doctor_ai():
