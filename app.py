@@ -1,13 +1,14 @@
 from flask import Flask,render_template ,Response,redirect,request,flash,url_for,Request,session
-from sql import authentication,registration,partnership_form,patient_record_saving,get_records
+from sql import authentication,registration,partnership_form,patient_record_saving,get_records,admin_authentication
 from ai import call_ai
 import os
 from werkzeug.utils import secure_filename
-
+import requests
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 user_data = None
+admin_data = None
 UPLOAD_FOLDER = 'static/images/Reports/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 #---------------- website Directories ------------------
@@ -68,13 +69,13 @@ def admin_login():
     name = request.form.get("email")
     password = request.form.get("password")
     
-    user_data =  authentication(name,password)
+    user_data =  admin_authentication(name,password)
     print(user_data)
     
     if(len(user_data)>0):
-            session['user_data'] = user_data[0]
-            user_data = session.get('user_data')
-            return render_template('/admin/index.html',user_data=user_data)
+            session['admin_data'] = user_data[0]
+            admin_data = session.get('admin_data')
+            return render_template('/admin/index.html',user_data=admin_data)
 
     return redirect(url_for('login'))
 
@@ -114,6 +115,21 @@ def user_page(Name):
          resp = get_records(user_data[0])
          print(resp)
          return render_template(f"/user/{Name}.html",user_data = user_data,user_records=resp)
+    if Name=="care_center1":
+        url = "https://api.data.gov.in/resource/de59e770-2333-4eaf-9088-a3643de040c8?api-key=579b464db66ec23bdd000001632b336f56834f2054f46036789c78e4&format=json&limit=20&filters%5B_cityname_%5D=jaipur"
+        response = requests.get(url)
+        # Check if the request was successful (status code 200)
+        if response.status_code == 200:
+            # Parse the JSON response if the API returns JSON data
+            data = response.json()
+            
+            # Now you can work with the 'data' variable, which contains the API response
+            return render_template(f"/user/{Name}.html",user_data = user_data,hospital_list=data['records'])
+            
+
+        else:
+            # If the request was not successful, print an error message
+            print(f"Error: {response.status_code}")
     return render_template(f"/user/{Name}.html",user_data = user_data)
 
 

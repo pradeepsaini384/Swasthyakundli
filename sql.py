@@ -8,6 +8,10 @@ def authentication(email,password):
     cursor.execute("""SELECT * FROM `user` WHERE `email` LIKE '{}' AND `password` LIKE '{}'""".format(email,password))
     users = cursor.fetchall()
     return users
+def admin_authentication(email,password):
+    cursor.execute("""SELECT * FROM `user` WHERE `email` LIKE '{}' AND `password` LIKE '{}'""".format(email,password))
+    users = cursor.fetchall()
+    return users
 
 
 def registration(list):
