@@ -1,5 +1,5 @@
 from flask import Flask,render_template ,Response,redirect,request,flash,url_for,Request,session
-from sql import authentication,registration,partnership_form,patient_record_saving,get_records,admin_authentication
+from sql import authentication,registration,partnership_form,patient_record_saving,get_records,admin_authentication,doctor_authentication
 from ai import call_ai
 import os
 from werkzeug.utils import secure_filename
@@ -55,15 +55,15 @@ def doctor_login():
     name = request.form.get("email")
     password = request.form.get("password")
     
-    user_data =  authentication(name,password)
+    user_data =  doctor_authentication(name,password)
     print(user_data)
     
     if(len(user_data)>0):
-            session['user_data'] = user_data[0]
-            user_data = session.get('user_data')
-            return render_template('/doctor/index.html',user_data=user_data)
+            session['doctor_data'] = user_data[0]
+            doctor_data = session.get('doctor_data')
+            return render_template('/doctor/index.html',user_data=doctor_data)
 
-    return redirect(url_for('login'))
+    return redirect(url_for('doctor_login_page'))
 @app.route('/admin_login',methods = ['GET','POST'])
 def admin_login():
     name = request.form.get("email")
@@ -173,12 +173,14 @@ def ai():
 @app.route('/doctor')
 def Doctor():
     
-    return render_template('/doctor/index.html')
+    doctor_data = session.get('doctor_data')
+    return render_template('/doctor/index.html',user_data=doctor_data)
 
 @app.route('/doctor/<Name>')
 def doctor_page(Name):
-    # user_data = session.get('user_data')
-    return render_template(f"/doctor/{Name}.html")
+    user_data = session.get('doctor_data')
+    
+    return render_template(f"/doctor/{Name}.html",user_data= user_data)
 
 @app.route('/admin/<Name>')
 def admin_routing(Name):
