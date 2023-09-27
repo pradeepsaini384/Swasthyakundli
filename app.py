@@ -182,7 +182,8 @@ def doctor_page(Name):
 
 @app.route('/admin/<Name>')
 def admin_routing(Name):
-    return render_template(f'/admin/{Name}.html')
+    admin_data = session.get('admin_data')
+    return render_template(f'/admin/{Name}.html',user_data=admin_data)
 
 @app.route("/call_ai_doctor",methods = ['GET','POST'])
 def doctor_ai():
