@@ -9,6 +9,7 @@ app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 user_data = None
 admin_data = None
+doctor_data  = None
 UPLOAD_FOLDER = 'static/images/Reports/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 #---------------- website Directories ------------------
@@ -48,8 +49,22 @@ def user_login():
             session['user_data'] = user_data[0]
             user_data = session.get('user_data')
             return render_template('/user/index.html',user_data=user_data)
+@app.route('/doctor_user_report',methods = ['GET','POST'])
+def doctor_user_report():
+    name = request.form.get("login-email")
+    password = request.form.get("login-password")
+    
+    user_data1 =  authentication(name,password)
+   
+    if(len(user_data1)>0):
+            user_data = session.get('user_data')
+            resp = get_records(user_data[0])
+            
+            return render_template(f"/doctor/health_history.html",user_data = user_data,user_records=resp)
+    else:
+         return "somthing wrong"        
 
-    return redirect(url_for('login'))
+    
 @app.route('/doctor_login',methods = ['GET','POST'])
 def doctor_login():
     name = request.form.get("email")

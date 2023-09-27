@@ -56,7 +56,7 @@
             </div>
             <ul class="nav navbar-nav align-items-center ms-auto">
                 <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">{{user_data[1]}}</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="/static/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">{{user_data[1]}}</span><span class="user-status">Doctor Dashboard</span></div><span class="avatar"><img class="round" src="/static/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a class="dropdown-item" href="#"><i class="me-50" data-feather="user"></i> Profile</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="mail"></i> Inbox</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="check-square"></i> Task</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="message-square"></i> Chats</a>
                         <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="me-50" data-feather="settings"></i> Settings</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="credit-card"></i> Pricing</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="help-circle"></i> FAQ</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="power"></i> Logout</a>
@@ -100,13 +100,24 @@
                     <i data-feather="book"></i>
                     <span class="menu-title text-truncate">Family History</span>
                 </a>
-            </li>
-            <li class="nav-item">
-                <a class="d-flex align-items-center" href="/doctor/health_tips">
-                    <i data-feather="list"></i>
-                    <span class="menu-title text-truncate">AI Health Insights</span>
+            </li><li class="nav-item">
+                <a class="d-flex align-items-center" href="/doctor/user_appointment">
+                    <i data-feather="book"></i>
+                    <span class="menu-title text-truncate">Patient Appointment</span>
                 </a>
             </li>
+            <li class="nav-item">
+                    <a class="d-flex align-items-center" href="/health_tips">
+                        <i data-feather="list"></i>
+                        <span class="menu-title text-truncate">AI Health Insights</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="d-flex align-items-center" href="/doctor/todo">
+                        <i data-feather="edit"></i>
+                        <span class="menu-title text-truncate">Todo</span>
+                    </a>
+                </li>
             <li class="active nav-item">
                 <a class="d-flex align-items-center" href="/doctor/disease_blog">
                     <i data-feather="plus-square"></i>
@@ -137,8 +148,8 @@
 </div>
 <!-- END: Main Menu-->
 
-    <!-- BEGIN: Content-->
-    <div class="app-content content ">
+     <!-- BEGIN: Content-->
+     <div class="app-content content ">
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>
         <div class="content-wrapper container-xxl p-0">
@@ -160,15 +171,16 @@
                 </div>
             </div>
             <div class="content-body">
+                
                 <!-- Knowledge base Jumbotron -->
                 <section id="knowledge-base-search">
                     <div class="row">
                         <div class="col-12">
                             <div class="card knowledge-base-bg text-center" style="background-image: url('/static/app-assets/images/banner/banner.png')">
                                 <div class="card-body">
-                                    <h2 class="text-primary">Dedicated Source Used on Website</h2>
+                                    <h2 class="text-primary">Health Dashboard</h2>
                                     <p class="card-text mb-2">
-                                        <span>Popular searches: </span><span class="fw-bolder">Sales automation, Email marketing</span>
+                                        <span>Popular health topics: </span><span class="fw-bolder">Fitness tips, Nutrition, Sleep</span>
                                     </p>
                                     <form class="kb-search-input">
                                         <div class="input-group input-group-merge">
@@ -191,90 +203,91 @@
                             <div class="card">
                                 <a href="page-kb-category.html">
                                     <img src="/static/app-assets/images/illustration/sales.svg" class="card-img-top" alt="knowledge-base-image" />
-
+                
                                     <div class="card-body text-center">
-                                        <h4>Sales Automation</h4>
+                                        <h4>Health and Wellness Tips</h4>
                                         <p class="text-body mt-1 mb-0">
-                                            There is perhaps no better demonstration of the folly of image of our tiny world.
+                                            Discover valuable tips and information for maintaining a healthy lifestyle.
                                         </p>
                                     </div>
                                 </a>
                             </div>
                         </div>
-
+                
                         <!-- marketing -->
                         <div class="col-md-4 col-sm-6 col-12 kb-search-content">
                             <div class="card">
                                 <a href="page-kb-category.html">
                                     <img src="/static/app-assets/images/illustration/marketing.svg" class="card-img-top" alt="knowledge-base-image" />
                                     <div class="card-body text-center">
-                                        <h4>Marketing Automation</h4>
+                                        <h4>Nutrition Guides</h4>
                                         <p class="text-body mt-1 mb-0">
-                                            Look again at that dot. That’s here. That’s home. That’s us. On it everyone you love.
+                                            Explore a variety of nutrition guides and healthy eating recommendations.
                                         </p>
                                     </div>
                                 </a>
                             </div>
                         </div>
-
+                
                         <!-- api -->
                         <div class="col-md-4 col-sm-6 col-12 kb-search-content">
                             <div class="card">
                                 <a href="page-kb-category.html">
                                     <img src="/static/app-assets/images/illustration/api.svg" class="card-img-top" alt="knowledge-base-image" />
                                     <div class="card-body text-center">
-                                        <h4>API Questions</h4>
-                                        <p class="text-body mt-1 mb-0">every hero and coward, every creator and destroyer of civilization.</p>
+                                        <h4>Sleep Quality</h4>
+                                        <p class="text-body mt-1 mb-0">Learn how to improve your sleep quality and overall well-being.</p>
                                     </div>
                                 </a>
                             </div>
                         </div>
-
+                
                         <!-- personalization -->
                         <div class="col-md-4 col-sm-6 col-12 kb-search-content">
                             <div class="card">
                                 <a href="page-kb-category.html">
                                     <img src="/static/app-assets/images/illustration/personalization.svg" class="card-img-top" alt="knowledge-base-image" />
                                     <div class="card-body text-center">
-                                        <h4>Personalization</h4>
-                                        <p class="text-body mt-1 mb-0">It has been said that astronomy is a humbling and character experience.</p>
+                                        <h4>Mental Health Tips</h4>
+                                        <p class="text-body mt-1 mb-0">Explore strategies for maintaining good mental health.</p>
                                     </div>
                                 </a>
                             </div>
                         </div>
-
+                
                         <!-- email -->
                         <div class="col-md-4 col-sm-6 col-12 kb-search-content">
                             <div class="card">
                                 <a href="page-kb-category.html">
                                     <img src="/static/app-assets/images/illustration/email.svg" class="card-img-top" alt="knowledge-base-image" />
                                     <div class="card-body text-center">
-                                        <h4>Email Marketing</h4>
-                                        <p class="text-body mt-1 mb-0">There is perhaps no better demonstration of the folly of human conceits.</p>
+                                        <h4>Healthy Habits</h4>
+                                        <p class="text-body mt-1 mb-0">Learn about the importance of adopting and maintaining healthy habits.</p>
                                     </div>
                                 </a>
                             </div>
                         </div>
-
+                
                         <!-- demand -->
                         <div class="col-md-4 col-sm-6 col-12 kb-search-content">
                             <div class="card">
                                 <a href="page-kb-category.html">
                                     <img src="/static/app-assets/images/illustration/demand.svg" class="card-img-top" alt="knowledge-base-image" />
                                     <div class="card-body text-center">
-                                        <h4>Demand Generation</h4>
-                                        <p class="text-body mt-1 mb-0">Competent means we will never take anything for granted.</p>
+                                        <h4>Fitness Challenges</h4>
+                                        <p class="text-body mt-1 mb-0">Take on fitness challenges to improve your physical well-being.</p>
                                     </div>
                                 </a>
                             </div>
                         </div>
-
+                
                         <!-- no result -->
                         <div class="col-12 text-center no-result no-items">
-                            <h4 class="mt-4">Search result not found!!</h4>
+                            <h4 class="mt-4">Health information not found!!</h4>
                         </div>
                     </div>
                 </section>
+                
                 <!-- Knowledge base ends -->
             </div>
         </div>

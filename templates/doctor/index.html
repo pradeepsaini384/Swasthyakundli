@@ -54,7 +54,7 @@
             </div>
             <ul class="nav navbar-nav align-items-center ms-auto">
                 <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">{{user_data[1]}}</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="/static/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">{{user_data[1]}}</span><span class="user-status">Doctor Dashboard</span></div><span class="avatar"><img class="round" src="/static/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a class="dropdown-item" href="#"><i class="me-50" data-feather="user"></i> Profile</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="mail"></i> Inbox</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="check-square"></i> Task</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="message-square"></i> Chats</a>
                         <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="me-50" data-feather="settings"></i> Settings</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="credit-card"></i> Pricing</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="help-circle"></i> FAQ</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="power"></i> Logout</a>
@@ -100,9 +100,21 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="d-flex align-items-center" href="/doctor/user_appointment">
+                        <i data-feather="book"></i>
+                        <span class="menu-title text-truncate">Patient Appointment</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="d-flex align-items-center" href="/doctor/health_tips">
                         <i data-feather="list"></i>
                         <span class="menu-title text-truncate">AI Health Insights</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="d-flex align-items-center" href="/doctor/todo">
+                        <i data-feather="edit"></i>
+                        <span class="menu-title text-truncate">Todo</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -135,8 +147,8 @@
     </div>
     <!-- END: Main Menu-->
 
-    <!-- BEGIN: Content-->
-    <div class="app-content content ">
+     <!-- BEGIN: Content-->
+     <div class="app-content content ">
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>
         <div class="content-wrapper container-xxl p-0">
@@ -158,64 +170,513 @@
                 </div>
             </div>
             <div class="content-body">
-                <!-- Kick start -->
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Kick start your next project 🚀</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text">
-                            <p>
-                                Getting start with your project custom requirements using a ready template which is quite difficult and time
-                                taking process, Vuexy Admin provides useful features to kick start your project development with no efforts !
-                            </p>
-                            <ul>
-                                <li>
-                                    Vuexy Admin provides you getting start pages with different layouts, use the layout as per your custom
-                                    requirements and just change the branding, menu &amp; content.
-                                </li>
-                                <li>
-                                    Every components in Vuexy Admin are decoupled, it means use use only components you actually need! Remove
-                                    unnecessary and extra code easily just by excluding the path to specific SCSS, JS file.
-                                </li>
-                            </ul>
+                <div class="row match-height">
+                    <!-- Medal Card -->
+                    <div class="col-xl-4 col-md-6 col-12">
+                        <div class="card card-congratulation-medal">
+                            <div class="card-body">
+                                <h5>Welcome, {{user_data[1]}} 🎉</h5>
+                                <p class="card-text font-small-3">You are logged in as a healthcare <br> provider.</p>
+                                <h3 class="mb-75 mt-2 pt-50">
+                                    <a href="#">$48.9k</a>
+                                </h3>
+                                <button type="button" class="btn btn-primary">View Profile</button>
+                                <img src="/static/app-assets/images/illustration/badge.svg"
+                                    class="congratulation-medal" alt="Medal Pic" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!--/ Kick start -->
+                    <!--/ Medal Card -->
 
-                <!-- Page layout -->
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">What is page layout?</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text">
-                            <p>
-                                Starter kit includes pages with different layouts, useful for your next project to start development process
-                                from scratch with no time.
-                            </p>
-                            <ul>
-                                <li>Each layout includes required only assets only.</li>
-                                <li>
-                                    Select your choice of layout from starter kit, customize it with optional changes like colors and branding,
-                                    add required dependency only.
-                                </li>
-                            </ul>
-                            <div class="alert alert-primary" role="alert">
-                                <div class="alert-body">
-                                    <strong>Info:</strong> Please check the &nbsp;<a class="text-primary" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation/documentation-layouts.html#layout-collapsed-menu" target="_blank">Layout documentation</a>&nbsp; for more layout options i.e collapsed menu, without menu, empty & blank.
+                    <!-- Statistics Card -->
+                    <div class="col-xl-8 col-md-6 col-12">
+                        <div class="card card-statistics">
+                            <div class="card-header">
+                                <h4 class="card-title">Patient Information</h4>
+                                <div class="d-flex align-items-center">
+                                    <p class="card-text font-small-2 me-25 mb-0">Last updated: 1 day ago</p>
+                                </div>
+                            </div>
+                            <div class="card-body statistics-body">
+                                <div class="row">
+                                    <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                                        <div class="d-flex flex-row">
+                                            <div class="avatar bg-light-primary me-2">
+                                                <div class="avatar-content">
+                                                    <i data-feather="users" class="avatar-icon"></i>
+                                                </div>
+                                            </div>
+                                            <div class="my-auto">
+                                                <h4 class="fw-bolder mb-0">789</h4>
+                                                <p class="card-text font-small-3 mb-0">Patients</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                                        <div class="d-flex flex-row">
+                                            <div class="avatar bg-light-info me-2">
+                                                <div class="avatar-content">
+                                                    <i data-feather="calendar" class="avatar-icon"></i>
+                                                </div>
+                                            </div>
+                                            <div class="my-auto">
+                                                <h4 class="fw-bolder mb-0">32</h4>
+                                                <p class="card-text font-small-3 mb-0">Appointments Today</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
+                                        <div class="d-flex flex-row">
+                                            <div class="avatar bg-light-danger me-2">
+                                                <div class="avatar-content">
+                                                    <i data-feather="file-text" class="avatar-icon"></i>
+                                                </div>
+                                            </div>
+                                            <div class="my-auto">
+                                                <h4 class="fw-bolder mb-0">15</h4>
+                                                <p class="card-text font-small-3 mb-0">Pending Prescriptions</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-sm-6 col-12">
+                                        <div class="d-flex flex-row">
+                                            <div class="avatar bg-light-success me-2">
+                                                <div class="avatar-content">
+                                                    <i data-feather="message-circle" class="avatar-icon"></i>
+                                                </div>
+                                            </div>
+                                            <div class="my-auto">
+                                                <h4 class="fw-bolder mb-0">549</h4>
+                                                <p class="card-text font-small-3 mb-0">Total Consultations</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!--/ Statistics Card -->
                 </div>
-                <!--/ Page layout -->
+                <div class="row match-height">
 
+                    <div class="col-lg-4 col-12">
+                        <div class="row match-height">
+                            <!-- Bar Chart - Appointments -->
+                            <div class="col-lg-6 col-md-3 col-6">
+                                <div class="card">
+                                    <div class="card-body pb-70 pt-20">
+                                        <h6>Appointments</h6>
+                                        <h2 class="fw-bolder mb-1">3,456</h2>
+                                        <div id="statistics-appointment-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/ Bar Chart - Appointments -->
+
+                            <!-- Line Chart - Revenue -->
+                            <div class="col-lg-6 col-md-3 col-6">
+                                <div class="card card-tiny-line-stats">
+                                    <div class="card-body pb-70 pt-20">
+                                        <h6>Revenue</h6>
+                                        <h2 class="fw-bolder mb-1">$12,345</h2>
+                                        <div id="statistics-revenue-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/ Line Chart - Revenue -->
+
+                            <!-- Earnings Card -->
+                            <div class="col-lg-12 col-md-6 col-12">
+                                <div class="card earnings-card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h4 class="card-title mb-1">Earnings</h4>
+                                                <div class="font-small-2">This Month</div>
+                                                <h5 class="mb-1">$10,987.65</h5>
+                                                <p class="card-text text-muted font-small-2">
+                                                    <span class="fw-bolder">54.3%</span><span> more earnings than last
+                                                        month.</span>
+                                                </p>
+                                            </div>
+                                            <div class="col-6">
+                                                <div id="earnings-chart"></div>
+                                            </div>
+                                            <div class="col-12">
+                                                <p class="card-text text-muted font-small-2">
+                                                </p>
+                                                <p class="card-text text-muted font-small-2">
+                                                    <span class="fw-bolder">60.7%</span><span> more earnings than last
+                                                        year.</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/ Earnings Card -->
+                        </div>
+                    </div>
+
+                    <!-- Revenue Report Card -->
+                    <div class="col-lg-8 col-12">
+                        <div class="card card-revenue-budget">
+                            <div class="row mx-0">
+                                <div class="col-md-8 col-12 revenue-report-wrapper">
+                                    <div class="d-sm-flex justify-content-between align-items-center mb-3">
+                                        <h4 class="card-title mb-50 mb-sm-0">Revenue Report</h4>
+                                        <div class="d-flex align-items-center">
+                                            <div class="d-flex align-items-center me-2">
+                                                <span
+                                                    class="bullet bullet-primary font-small-3 me-50 cursor-pointer"></span>
+                                                <span>Income</span>
+                                            </div>
+                                            <div class="d-flex align-items-center ms-75">
+                                                <span
+                                                    class="bullet bullet-warning font-small-3 me-50 cursor-pointer"></span>
+                                                <span>Expense</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="revenue-report-chart"></div>
+                                </div>
+                                <div class="col-md-4 col-12 budget-wrapper">
+                                    <div class="btn-group">
+                                        <button type="button"
+                                            class="btn btn-outline-primary btn-sm dropdown-toggle budget-dropdown"
+                                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            2022
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">2023</a>
+                                            <a class="dropdown-item" href="#">2022</a>
+                                            <a class="dropdown-item" href="#">2021</a>
+                                        </div>
+                                    </div>
+                                    <h2 class="mb-25">$32,500</h2>
+                                    <div class="d-flex justify-content-center">
+                                        <span class="fw-bolder me-25">Budget:</span>
+                                        <span>$50,000</span>
+                                    </div>
+                                    <div id="budget-chart"></div>
+                                    <button type="button" class="btn btn-primary">Increase Budget</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Revenue Report Card -->
+                </div>
+                <div class="row match-height">
+                    <!-- Company Table Card -->
+                    <div class="col-lg-8 col-12">
+                        <div class="card card-company-table">
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Healthcare Provider</th>
+                                                <th>Category</th>
+                                                <th>Patients</th>
+                                                <th>Revenue</th>
+                                                <th>Appointments</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar rounded">
+                                                            <div class="avatar-content">
+                                                                <img src="/static/app-assets/images/icons/toolbox.svg"
+                                                                    alt="Toolbar svg" />
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="fw-bolder">ABC Medical Center</div>
+                                                            <div class="font-small-2 text-muted">contact@abcmedical.com
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar bg-light-primary me-1">
+                                                            <div class="avatar-content">
+                                                                <i data-feather="user" class="font-medium-3"></i>
+                                                            </div>
+                                                        </div>
+                                                        <span>General Medicine</span>
+                                                    </div>
+                                                </td>
+                                                <td class="text-nowrap">
+                                                    <div class="d-flex flex-column">
+                                                        <span class="fw-bolder mb-25">8,500</span>
+                                                        <span class="font-small-2 text-muted">active patients</span>
+                                                    </div>
+                                                </td>
+                                                <td>$2,345,678</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <span class="fw-bolder me-1">92%</span>
+                                                        <i data-feather="trending-up"
+                                                            class="text-success font-medium-1"></i>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <!-- Add more healthcare provider rows here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Company Table Card -->
+
+                    <!-- Health meetup Card -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="card card-developer-meetup">
+                            <div class="meetup-img-wrapper rounded-top text-center">
+                                <img src="/static/app-assets/images/illustration/email.svg" alt="developer meetup Pic"
+                                    height="170" />
+                            </div>
+                            <div class="card-body">
+                                <div class="meetup-header d-flex align-items-center">
+                                    <div class="meetup-day">
+                                        <h6 class="mb-0">FRI</h6>
+                                        <h3 class="mb-0">15</h3>
+                                    </div>
+                                    <div class="my-auto">
+                                        <h4 class="card-title mb-25">Health Awareness meetup</h4>
+                                        <p class="card-text mb-0">Join us for a health education session</p>
+                                    </div>
+                                </div>
+                                <div class="mt-0">
+                                    <div class="avatar float-start bg-light-primary rounded me-1">
+                                        <div class="avatar-content">
+                                            <i data-feather="calendar" class="avatar-icon font-medium-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="more-info">
+                                        <h6 class="mb-0">Sat, Oct 15, 2023</h6>
+                                        <small>9:00 AM to 4:00 PM</small>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <div class="avatar float-start bg-light-primary rounded me-1">
+                                        <div class="avatar-content">
+                                            <i data-feather="map-pin" class="avatar-icon font-medium-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="more-info">
+                                        <h6 class="mb-0">Community Center</h6>
+                                        <small>123 Health Street, Your City</small>
+                                    </div>
+                                </div>
+                                <div class="avatar-group">
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom"
+                                        title="Dr. Lisa Johnson" class="avatar pull-up">
+                                        <img src="/static/app-assets/images/portrait/small/avatar-s-1.jpg" alt="Avatar"
+                                            width="33" height="33" />
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom"
+                                        title="Nurse Emily Watson" class="avatar pull-up">
+                                        <img src="/static/app-assets/images/portrait/small/avatar-s-2.jpg" alt="Avatar"
+                                            width="33" height="33" />
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom"
+                                        title="Dr. Michael Adams" class="avatar pull-up">
+                                        <img src="/static/app-assets/images/portrait/small/avatar-s-3.jpg" alt="Avatar"
+                                            width="33" height="33" />
+                                    </div>
+                                    <!-- Add more healthcare professionals here -->
+                                    <h6 class="align-self-center cursor-pointer ms-50 mb-0">+25</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Health meetup Card -->
+
+
+
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h4 class="card-title">Patient Progress Overview</h4>
+                                <i data-feather="help-circle" class="font-medium-3 text-muted cursor-pointer"></i>
+                            </div>
+                            <div class="card-body p-0">
+                                <div id="goal-overview-radial-bar-chart" class="my-2"></div>
+                                <div class="row border-top text-center mx-0">
+                                    <div class="col-6 border-end py-1">
+                                        <p class="card-text text-muted mb-0">Patients Recovered</p>
+                                        <h3 class="fw-bolder mb-0">1,234</h3>
+                                    </div>
+                                    <div class="col-6 py-1">
+                                        <p class="card-text text-muted mb-0">Patients Under Treatment</p>
+                                        <h3 class="fw-bolder mb-0">567</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <!-- Goal Overview Card -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h4 class="card-title">Goal Overview</h4>
+                                <i data-feather="help-circle" class="font-medium-3 text-muted cursor-pointer"></i>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="row border-top text-center mx-0">
+                                    <div class="col-6 border-end py-1">
+                                        <p class="card-text text-muted mb-0">Patients Recovered</p>
+                                        <h3 class="fw-bolder mb-0">1,234</h3>
+                                    </div>
+                                    <div class="col-6 py-1">
+                                        <p class="card-text text-muted mb-0">Patients Under Treatment</p>
+                                        <h3 class="fw-bolder mb-0">567</h3>
+                                    </div>
+                                </div>
+                                
+                                <div class="row border-top text-center mx-0">
+                                    <div class="col-6 border-end py-1">
+                                        <p class="card-text text-muted mb-0">Appointments Scheduled</p>
+                                        <h3 class="fw-bolder mb-0">2,345</h3>
+                                    </div>
+                                    <div class="col-6 py-1">
+                                        <p class="card-text text-muted mb-0">Appointments Completed</p>
+                                        <h3 class="fw-bolder mb-0">1,789</h3>
+                                    </div>
+                                </div>
+                                
+                                <div class="row border-top text-center mx-0">
+                                    <div class="col-6 border-end py-1">
+                                        <p class="card-text text-muted mb-0">Healthy Meals Served</p>
+                                        <h3 class="fw-bolder mb-0">8,765</h3>
+                                    </div>
+                                    <div class="col-6 py-1">
+                                        <p class="card-text text-muted mb-0">Active Patients</p>
+                                        <h3 class="fw-bolder mb-0">4,321</h3>
+                                    </div>
+                                </div>
+                                
+                                <div class="row border-top text-center mx-0">
+                                    <div class="col-6 border-end py-1">
+                                        <p class="card-text text-muted mb-0">Medications Administered</p>
+                                        <h3 class="fw-bolder mb-0">12,345</h3>
+                                    </div>
+                                    <div class="col-6 py-1">
+                                        <p class="card-text text-muted mb-0">Patient Feedback</p>
+                                        <h3 class="fw-bolder mb-0">97% Positive</h3>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Goal Overview Card -->
+
+                    <!-- Transaction Card -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="card card-transaction">
+                            <div class="card-header">
+                                <h4 class="card-title">Healthcare Transactions</h4>
+                                <div class="dropdown chart-dropdown">
+                                    <i data-feather="more-vertical" class="font-medium-3 cursor-pointer"
+                                        data-bs-toggle="dropdown"></i>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a class="dropdown-item" href="#">Last 28 Days</a>
+                                        <a class="dropdown-item" href="#">Last Month</a>
+                                        <a class="dropdown-item" href="#">Last Year</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="transaction-item">
+                                    <div class="d-flex">
+                                        <div class="avatar bg-light-primary rounded float-start">
+                                            <div class="avatar-content">
+                                                <i data-feather="hospital" class="avatar-icon font-medium-3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-percentage">
+                                            <h6 class="transaction-title">Hospital Bill</h6>
+                                            <small>Medical Expenses</small>
+                                        </div>
+                                    </div>
+                                    <div class="fw-bolder text-danger">- $2,500</div>
+                                </div>
+                                <div class="transaction-item">
+                                    <div class="d-flex">
+                                        <div class="avatar bg-light-success rounded float-start">
+                                            <div class="avatar-content">
+                                                <i data-feather="check-square" class="avatar-icon font-medium-3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-percentage">
+                                            <h6 class="transaction-title">Insurance Claim</h6>
+                                            <small>Claim Approval</small>
+                                        </div>
+                                    </div>
+                                    <div class="fw-bolder text-success">+ $1,200</div>
+                                </div>
+                                <div class="transaction-item">
+                                    <div class="d-flex">
+                                        <div class="avatar bg-light-danger rounded float-start">
+                                            <div class="avatar-content">
+                                                <i data-feather="stethoscope" class="avatar-icon font-medium-3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-percentage">
+                                            <h6 class="transaction-title">Doctor's Visit</h6>
+                                            <small>Consultation Fee</small>
+                                        </div>
+                                    </div>
+                                    <div class="fw-bolder text-success">+ $150</div>
+                                </div>
+                                <div class="transaction-item">
+                                    <div class="d-flex">
+                                        <div class="avatar bg-light-warning rounded float-start">
+                                            <div class="avatar-content">
+                                                <i data-feather="medkit" class="avatar-icon font-medium-3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-percentage">
+                                            <h6 class="transaction-title">Medication</h6>
+                                            <small>Prescription Drugs</small>
+                                        </div>
+                                    </div>
+                                    <div class="fw-bolder text-danger">- $75</div>
+                                </div>
+                                <div class="transaction-item">
+                                    <div class="d-flex">
+                                        <div class="avatar bg-light-info rounded float-start">
+                                            <div class="avatar-content">
+                                                <i data-feather="user-check" class="avatar-icon font-medium-3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-percentage">
+                                            <h6 class="transaction-title">Health Checkup</h6>
+                                            <small>Checkup Fee</small>
+                                        </div>
+                                    </div>
+                                    <div class="fw-bolder text-success">+ $250</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--/ Transaction Card -->
+
+                </div>
             </div>
         </div>
     </div>
     <!-- END: Content-->
+
 
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
