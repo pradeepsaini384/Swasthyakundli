@@ -12,6 +12,10 @@ def return_user_list():
     cursor.execute("""SELECT * FROM `user`""")
     users = cursor.fetchall()
     return users
+def return_doctor_list():
+    cursor.execute("""SELECT * FROM `doctor`""")
+    users = cursor.fetchall()
+    return users
 def admin_authentication(email,password):
     cursor.execute("""SELECT * FROM `admin` WHERE `email` LIKE '{}' AND `password` LIKE '{}'""".format(email,password))
     users = cursor.fetchall()
@@ -28,6 +32,10 @@ def registration(list):
     return 202
 def admin_registration(list):
     cursor.execute("""INSERT INTO `user` (`name`,`password`,`email`,`mobile_no`,`dob`) VALUES ('{}','{}','{}','{}','{}')""".format(list[0],list[1],list[2],list[3],list[4]))
+    conn.commit()
+    return 202
+def doctor_registration(list):
+    cursor.execute("""INSERT INTO `doctor` (`name`,`password`,`email`,`mobile_no`,`dob`) VALUES ('{}','{}','{}','{}','{}')""".format(list[0],list[1],list[2],list[3],list[4]))
     conn.commit()
     return 202
 

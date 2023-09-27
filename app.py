@@ -1,5 +1,5 @@
 from flask import Flask,render_template ,Response,redirect,request,flash,url_for,Request,session
-from sql import authentication,registration,partnership_form,patient_record_saving,get_records,admin_authentication,doctor_authentication,admin_registration,return_user_list,user_data_len,doctor_data_len
+from sql import authentication,registration,partnership_form,patient_record_saving,get_records,admin_authentication,doctor_authentication,admin_registration,return_user_list,user_data_len,doctor_data_len,doctor_registration,return_doctor_list
 from ai import call_ai
 import os
 from werkzeug.utils import secure_filename
@@ -90,7 +90,9 @@ def admin_login():
     if(len(user_data)>0):
             session['admin_data'] = user_data[0]
             admin_data = session.get('admin_data')
-            return render_template('/admin/index.html',user_data=admin_data)
+            users_len = user_data_len()
+            doctor_len = doctor_data_len()
+            return render_template('/admin/index.html',user_data=admin_data,users_len=users_len[0][0],doctor_len=doctor_len[0][0])
 
     return redirect(url_for('admin_login_page'))
 
@@ -195,6 +197,26 @@ def add_user_from_admin():
         color = "red"
         message = "Getting Some Error To add User !"
         return render_template('/admin/user_list.html',user_data=user_data,color=color,message=message)
+@app.route('/add_doctor_from_admin',methods = ['GET','POST'])
+def add_doctor_from_admin():
+    name = request.form.get("name")
+    password = request.form.get("password")
+    email= request.form.get("email")
+    mobile_no = request.form.get("number")
+    # dob = request.form.get("dob")
+    list = [name,password,email,mobile_no,"01/02/2001"]
+    user_data = session.get('doctor_data')
+    resp = doctor_registration(list)
+    if resp == 202 :
+        color = "green"
+        message = "New Record Added !"
+        users_data = return_doctor_list()
+        
+        return render_template('/admin/doctor_list.html',user_data=user_data,users_data=users_data,color=color,message=message)
+    else:
+        color = "red"
+        message = "Getting Some Error To add User !"
+        return render_template('/admin/doctor_list.html',user_data=user_data,color=color,message=message)
 #-----------------ai-----------------
 @app.route("/call_ai",methods = ['GET','POST'])
 def ai():
@@ -230,6 +252,9 @@ def admin_routing(Name):
         users_len = user_data_len()
         doctor_len = doctor_data_len()
         return render_template(f'/admin/{Name}.html',user_data=admin_data,users_len=users_len[0][0],doctor_len=doctor_len[0][0])
+    if Name == "doctor_list":
+        users_data = return_doctor_list()
+        return render_template(f'/admin/{Name}.html',user_data=admin_data,users_data=users_data)
     return render_template(f'/admin/{Name}.html',user_data=admin_data,users_data=admin_data)
 
 @app.route("/call_ai_doctor",methods = ['GET','POST'])
@@ -262,8 +287,8 @@ def save_record():
             os.makedirs(path)
         filename = secure_filename(patient_reports.filename)
         patient_reports.save(os.path.join(path, filename))
-        filedic = path+filename
-        # print(filedic)
+        filedic = '/'+path+''+filename
+        print(filedic)
         patient_report_list = [user_id,report_data,date,filedic,Report_info,Doctors_info,report_status]
         resp = patient_record_saving(patient_report_list)
         if resp == 202:

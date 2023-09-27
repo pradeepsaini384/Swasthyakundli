@@ -252,14 +252,94 @@
                                                 <tr>
                                                     <th>Report name</th>
                                                     <th>Date</th>
-                                                    <th>Report Description</th>
-                                                    <th>Doctor Prescription</th>
+                                                    
                                                     <th>Status</th>
-                                                    <th><a href="">View Report</a></th>
+                                                    <th>View Image</th>
+                                                    <th>View Details </a></th>
                                                 </tr>
                                             </thead>
+                                            <tbody>
                                             {% for i in user_records %}
-                                            <tbody><tr class="odd"><td class="sorting_1">{{i[1]}}</td><td>{{i[2]}}</td><td>{{i[3]}}</td><td>{{i[4]}}</td><td>{{i[5]}}</td><td>{{i[6]}}</td></tr></tbody>
+                                            {% set img_var = i[6] %}
+                                          
+                                                <tr class="odd"><td class="sorting_1">{{i[1]}}</td><td>{{i[2]}}</td><td>{{i[5]}}</td>
+                                                <td>
+                                                    <button type="reset" class="btn btn-outline-primary waves-effect" data-bs-toggle="modal" data-bs-target="#imgModel">
+                                                        Img View
+                                                    </button>
+                                                    <div class="modal fade text-start" id="imgModel" tabindex="-1" aria-labelledby="myModalLabel33" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title" id="myModalLabel33">Img 1</h4>
+                                                                    <button type="reset" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="m-3">
+                                                                    
+                                                                    <img style="object-fit: cover;height: 100%;width: 100%;" src="{{img_var}}"  alt="Image Description">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <button type="reset" class="btn btn-outline-primary waves-effect" data-bs-toggle="modal" data-bs-target="#detailsModel">
+                                                        View Details
+                                                    </button>
+                                                    <div class="modal fade text-start" id="detailsModel" tabindex="-1" aria-labelledby="myModalLabel33" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title" id="myModalLabel33">More Details</h4>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <section id="basic-vertical-layouts">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12 col-12">
+                                                                            <div class="card">
+                                                                                <div class="card-header">
+                                                                                    <h4 class="card-title">Report Detail </h4>
+                                                                                </div>
+                                                                                <div class="card-body">
+                                                                                    <form class="form form-vertical">
+                                                                                        <div class="row">
+                                                
+                                                                                            <!-- Report Data Field -->
+                                                                                                                                                                
+                                                                        
+                                                                                            
+                                                
+                                                                                            <!-- Patient Information Textarea -->
+                                                                                            <div class="col-12">
+                                                                                                <div class="mb-1">
+                                                                                                    <label class="form-label" for="exampleFormControlTextarea1">Report description</label>
+                                                                                                   <p class="card-text">{{i[3]}}</p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!-- Patient Information Textarea -->
+                                                                                            <div class="col-12">
+                                                                                                <div class="mb-1">
+                                                                                                    <label class="form-label" for="exampleFormControlTextarea1">Doctors Prescription</label>
+                                                                                                    <p class="card-text">{{i[4]}}4</p>
+                                                                                                </div>
+                                                                                            </div>
+                                                
+                                                                                            
+                                                                                        </div>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                        
+                                                                    </div>
+                                                                </section>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
                                             {% endfor %}
                                         </table>
                                     </div>
