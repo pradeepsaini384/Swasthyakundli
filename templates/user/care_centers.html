@@ -1,81 +1,14 @@
-
-
-    <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="ltr">
-<!-- BEGIN: Head-->
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
-    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="PIXINVENT">
-    <title>Swasthyakundli: Your Health Journey</title>
-    <link rel="apple-touch-icon" href="/static/app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="/static/app-assets/images/ico/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
-
-     <!-- BEGIN: Vendor CSS-->
-     <link rel="stylesheet" type="text/css" href="/static/app-assets/vendors/css/vendors.min.css">
-     <link rel="stylesheet" type="text/css" href="/static/app-assets/vendors/css/forms/wizard/bs-stepper.min.css">
-     <link rel="stylesheet" type="text/css" href="/static/app-assets/vendors/css/forms/select/select2.min.css">
-     <!-- END: Vendor CSS-->
- 
-     <!-- BEGIN: Theme CSS-->
-     <link rel="stylesheet" type="text/css" href="/static/app-assets/css/bootstrap.css">
-     <link rel="stylesheet" type="text/css" href="/static/app-assets/css/bootstrap-extended.css">
-     <link rel="stylesheet" type="text/css" href="/static/app-assets/css/colors.css">
-     <link rel="stylesheet" type="text/css" href="/static/app-assets/css/components.css">
-     <link rel="stylesheet" type="text/css" href="/static/app-assets/css/themes/dark-layout.css">
-     <link rel="stylesheet" type="text/css" href="/static/app-assets/css/themes/bordered-layout.css">
-     <link rel="stylesheet" type="text/css" href="/static/app-assets/css/themes/semi-dark-layout.css">
- 
+{% extends '/user/base.html' %}
+{% block pagecss %}
      <!-- BEGIN: Page CSS-->
      <link rel="stylesheet" type="text/css" href="/static/app-assets/css/core/menu/menu-types/vertical-menu.css">
      <link rel="stylesheet" type="text/css" href="/static/app-assets/css/plugins/forms/form-wizard.css">
      <link rel="stylesheet" type="text/css" href="/static/app-assets/css/plugins/forms/form-validation.css">
      <link rel="stylesheet" type="text/css" href="/static/app-assets/css/pages/modal-create-app.css">
-     <!-- END: Page CSS-->
- 
-     <!-- BEGIN: Custom CSS-->
-     <link rel="stylesheet" type="text/css" href="/static/assets/css/style.css">
-     <!-- END: Custom CSS-->
-
-</head>
-<!-- END: Head-->
-
-<!-- BEGIN: Body-->
-
-<body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="">
-
-    <!-- BEGIN: Header-->
-    <nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow container-xxl">
-        <div class="navbar-container d-flex content">
-            <div class="bookmark-wrapper d-flex align-items-center">
-                <ul class="nav navbar-nav d-xl-none">
-                    <li class="nav-item"><a class="nav-link menu-toggle" href="#"><i class="ficon" data-feather="menu"></i></a></li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="moon"></i></a></li>
-                </ul>
-            </div>
-            <ul class="nav navbar-nav align-items-center ms-auto">
-                <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">John Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="/static/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a class="dropdown-item" href="#"><i class="me-50" data-feather="user"></i> Profile</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="mail"></i> Inbox</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="check-square"></i> Task</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="message-square"></i> Chats</a>
-                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="me-50" data-feather="settings"></i> Settings</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="credit-card"></i> Pricing</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="help-circle"></i> FAQ</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="power"></i> Logout</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <!-- END: Header-->
-
-
-   <!-- BEGIN: Main Menu-->
-   <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+     <!-- END: Page CSS-->{% endblock %}
+{% block body %}
+  <!-- BEGIN: Main Menu-->
+  <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item me-auto"><a class="navbar-brand" href="index.html">
@@ -126,6 +59,13 @@
                 <a class="d-flex align-items-center" href="/User/care_centers">
                     <i data-feather='plus-square'></i>
                     <span class="menu-title text-truncate" data-i18n="Care Centers">Care Centers</span>
+                </a>
+            </li>
+
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User/blood_centers">
+                    <i data-feather='plus-square'></i>
+                    <span class="menu-title text-truncate" data-i18n="Care Centers">Blood Centers</span>
                 </a>
             </li>
             
@@ -182,7 +122,6 @@
     </div>
 </div>
 <!-- END: Main Menu-->
-
     <!-- BEGIN: Content-->
     <div class="app-content content ">
         <div class="content-overlay"></div>
@@ -209,108 +148,8 @@
                 <section id="modal-examples">
                     <div class="row">
                         <!-- create app card-->
-                        <div class="row">
-                            <!-- First Card -->
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <i data-feather="calendar" class="font-large-2 mb-1"></i>
-                                        <!-- Update the card title to "Example Hospital" -->
-                                        <h5 class="card-title">ABHISHEK HOSPITAL</h5>
-                                        <p class="card-text">3-B-III, Moti Dungari Road, Jaipur-302004.</p>
-                            
-                                        <!-- modal trigger button -->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookAppointmentModal">
-                                            Book Now
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <!-- Second Card -->
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <i data-feather="calendar" class="font-large-2 mb-1"></i>
-                                        <!-- Update the card title to "Example Hospital" -->
-                                        <h5 class="card-title">VASUNDHARA HOSPITAL LIMITED</h5>
-                                        <p class="card-text">11, Sector-11, Nandanvan, Chopasni Housing Board, Jodhpur-342008</p>
-                            
-                                        <!-- modal trigger button -->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookAppointmentModal">
-                                            Book Now
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <!-- Third Card -->
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <i data-feather="calendar" class="font-large-2 mb-1"></i>
-                                        <!-- Update the card title to "Example Hospital" -->
-                                        <h5 class="card-title">JAIN ENT HOSPITAL</h5>
-                                        <p class="card-text">23-24, Satya Vihar Colony, Pankaj Singhavi Marg, Near New Vidhansabha, Lal Kothi, Jaipur..</p>
-                            
-                                        <!-- modal trigger button -->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookAppointmentModal">
-                                            Book Now
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <!-- Fourth Card -->
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <i data-feather="calendar" class="font-large-2 mb-1"></i>
-                                        <!-- Update the card title to "Example Hospital" -->
-                                        <h5 class="card-title">Deep Hospital & Research Centre</h5>
-                                        <p class="card-text">Khatipura Road, Jhotwara, Jaipur</p>
-                            
-                                        <!-- modal trigger button -->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookAppointmentModal">
-                                            Book Now
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <!-- Fifth Card -->
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <i data-feather="calendar" class="font-large-2 mb-1"></i>
-                                        <!-- Update the card title to "Example Hospital" -->
-                                        <h5 class="card-title">ROYAL EYE CARE AND RESEARCH CENTRE</h5>
-                                        <p class="card-text">B-15, Govind Marg, Opp. Ice Factory, Adarsh Nagar, Jaipur-302004.</p>
-                            
-                                        <!-- modal trigger button -->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookAppointmentModal">
-                                            Book Now
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <!-- Sixth Card -->
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <i data-feather="calendar" class="font-large-2 mb-1"></i>
-                                        <!-- Update the card title to "Example Hospital" -->
-                                        <h5 class="card-title">Mittal Hospital & Research Centre</h5>
-                                        <p class="card-text">Plot No. C-20-A, Ground Floor, JTN Anukampa Plaza, Bhagwan Das Road, C-Scheme, Jaipur.</p>
-                            
-                                        <!-- modal trigger button -->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookAppointmentModal">
-                                            Book Now
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row" id="card-container">
+                            <!-- Cards will be dynamically added here -->
                         </div>
                         
                         
@@ -592,32 +431,10 @@
 
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
-
-    <!-- BEGIN: Footer-->
-    <footer class="footer footer-static footer-light">
-        <p class="clearfix mb-0"><span class="float-md-start d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2023<a class="ms-25" href="#" target="_blank">Swasthyakundli</a><span class="d-none d-sm-inline-block">, All rights Reserved</span></span><span class="float-md-end d-none d-md-block">Hand-crafted & Made with<i data-feather="heart"></i></span></p>
-    </footer>
-    <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
-    <!-- END: Footer-->
-
-
-    <!-- BEGIN: Vendor JS-->
-    <script src="/static/app-assets/vendors/js/vendors.min.js"></script>
-    <!-- BEGIN Vendor JS-->
-
-    <!-- BEGIN: Page Vendor JS-->
-    <script src="/static/app-assets/vendors/js/forms/wizard/bs-stepper.min.js"></script>
-    <script src="/static/app-assets/vendors/js/forms/select/select2.full.min.js"></script>
-    <script src="/static/app-assets/vendors/js/forms/cleave/cleave.min.js"></script>
-    <script src="/static/app-assets/vendors/js/forms/cleave/addons/cleave-phone.us.js"></script>
-    <script src="/static/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
-    <!-- END: Page Vendor JS-->
-
-    <!-- BEGIN: Theme JS-->
-    <script src="/static/app-assets/js/core/app-menu.js"></script>
-    <script src="/static/app-assets/js/core/app.js"></script>
-    <!-- END: Theme JS-->
-
+    
+    {% endblock %}
+    
+    {% block pagejs %}
     <!-- BEGIN: Page JS-->
     <script src="/static/app-assets/js/scripts/pages/modal-add-new-cc.js"></script>
     <script src="/static/app-assets/js/scripts/pages/page-pricing.js"></script>
@@ -626,19 +443,54 @@
     <script src="/static/app-assets/js/scripts/pages/modal-two-factor-auth.js"></script>
     <script src="/static/app-assets/js/scripts/pages/modal-edit-user.js"></script>
     <script src="/static/app-assets/js/scripts/pages/modal-share-project.js"></script>
-    <!-- END: Page JS-->
-
     <script>
-        $(window).on('load', function() {
-            if (feather) {
-                feather.replace({
-                    width: 14,
-                    height: 14
-                });
-            }
-        })
+        // Function to fetch data from the API and populate cards
+        function fetchAndPopulateData() {
+            // Define the API URL
+            var apiUrl = "https://api.data.gov.in/resource/de59e770-2333-4eaf-9088-a3643de040c8?api-key=579b464db66ec23bdd000001632b336f56834f2054f46036789c78e4&format=json&limit=20&filters%5B_cityname_%5D=jaipur";
+    
+            // Make an AJAX request to the API
+            $.ajax({
+                url: apiUrl,
+                method: "GET",
+                success: function (data) {
+                    // Assuming the API response is in JSON format
+                    var records = data.records; // Assuming the API response contains an array of records
+    
+                    // Iterate through the records and create cards
+                    for (var i = 0; i < records.length; i++) {
+                        var hospitalname = records[i].hospitalname; // Update this with the actual JSON structure
+                        var description = records[i].hospitaladdress; // Update this with the actual JSON structure
+    
+                        // Create a new card element
+                        var cardHtml = `
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <i data-feather="calendar" class="font-large-2 mb-1"></i>
+                                        <h5 class="card-title">${hospitalname}</h5>
+                                        <p class="card-text">${description}</p>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookAppointmentModal">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+    
+                        // Append the card to the card container
+                        $("#card-container").append(cardHtml);
+                    }
+                },
+                error: function (error) {
+                    console.error("Error fetching data: ", error);
+                }
+            });
+        }
+    
+        // Call the function to fetch and populate data when the document is ready
+        $(document).ready(function () {
+            fetchAndPopulateData();
+        });
     </script>
-</body>
-<!-- END: Body-->
-
-</html>
+    <!-- END: Page JS-->{% endblock %}

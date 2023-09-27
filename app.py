@@ -305,4 +305,5 @@ def save_record():
             color = "red"
             return render_template('/user/recordData.html',message = message,color = color,user_data=user_data)
 if __name__ == "__main__":
+    app.run(host='0.0.0.0',debug=True)
     app.run(debug=True)
