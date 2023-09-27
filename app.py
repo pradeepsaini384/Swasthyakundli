@@ -1,5 +1,5 @@
 from flask import Flask,render_template ,Response,redirect,request,flash,url_for,Request,session
-from sql import authentication,registration,partnership_form
+from sql import authentication,registration,partnership_form,patient_record_saving,get_records
 from ai import call_ai
 import os
 from werkzeug.utils import secure_filename
@@ -110,6 +110,10 @@ def User():
 @app.route('/User/<Name>')
 def user_page(Name):
     user_data = session.get('user_data')
+    if Name=="health_history":
+         resp = get_records(user_data[0])
+         print(resp)
+         return render_template(f"/user/{Name}.html",user_data = user_data,user_records=resp)
     return render_template(f"/user/{Name}.html",user_data = user_data)
 
 
@@ -177,20 +181,39 @@ def save_record():
     Report_info = request.form.get("Report_info")
     Doctors_info = request.form.get("Doctors_info")
     report_status = request.form.get("customColorRadio")
+    
     patient_reports = request.files['patient_reports']
-    print(report_data)
+    
+    user_data = session.get('user_data')
     if patient_reports:
         # resized_image = Image.open(file)
         # resized_image = resized_image.resize((300,230))
-        user_data2 = "pradeep"
-        path = app.config['UPLOAD_FOLDER']+f'{user_data2}'
-        print(path)
+        
+        username= user_data[1]
+        user_id = user_data[0]
+        
+        path = app.config['UPLOAD_FOLDER']+f'{username}'
+        
         if not os.path.exists(path):
             os.makedirs(path)
         filename = secure_filename(patient_reports.filename)
         patient_reports.save(os.path.join(path, filename))
         filedic = path+filename
-        print(filedic)
-        return "ok"
+        # print(filedic)
+        patient_report_list = [user_id,report_data,date,filedic,Report_info,Doctors_info,report_status]
+        resp = patient_record_saving(patient_report_list)
+        if resp == 202:
+            message = "Details Entered Successfully!"
+            color = "green"
+            return render_template('/user/recordData.html',message = message,color = color,user_data=user_data)
+        else:
+            message = "Duplicate entry or Something error!"
+            color = "red"
+            return render_template('/user/recordData.html',message = message,color = color,user_data=user_data)
+        
+    else:
+            message = "Duplicate entry or Something error!"
+            color = "red"
+            return render_template('/user/recordData.html',message = message,color = color,user_data=user_data)
 if __name__ == "__main__":
     app.run(debug=True)

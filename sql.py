@@ -19,3 +19,18 @@ def partnership_form(list):
     cursor.execute("""INSERT INTO `partnership` (`name`,`email`,`type`,`mobile`,`message`) VALUES ('{}','{}','{}','{}','{}')""".format(list[0],list[1],list[2],list[3],list[4]))
     conn.commit()
     return 202
+
+def patient_record_saving(list):
+    cursor.execute("""INSERT INTO `patient_record` (`user_id`,`name`,`date`,`img_path`,`report_desc`,`doctor_precp`,`status`) VALUES ('{}','{}','{}','{}','{}','{}','{}')""".format(list[0],list[1],list[2],list[3],list[4],list[5],list[6]))
+    try:
+         conn.commit()
+    except Exception as e :
+        return e
+
+    finally:
+        return 202
+    
+def get_records(user_id):
+    cursor.execute("""SELECT * FROM `patient_record` WHERE `user_id` LIKE '{}' """.format(user_id))
+    users = cursor.fetchall()
+    return users

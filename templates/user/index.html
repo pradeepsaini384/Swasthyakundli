@@ -111,87 +111,235 @@
         </div>
     </div>
     <!-- END: Main Menu-->
-    <!-- BEGIN: Content-->
-    <div class="app-content content ">
-        <div class="content-overlay"></div>
-        <div class="header-navbar-shadow"></div>
-        <div class="content-wrapper container-xxl p-0">
-            <div class="content-header row">
-                <div class="content-header-left col-md-9 col-12 mb-2">
-                    <div class="row breadcrumbs-top">
-                        <div class="col-12">
-                            <h2 class="content-header-title float-start mb-0">Dashboard</h2>
-                            <div class="breadcrumb-wrapper">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
-                                    </li>
-                                    <li class="breadcrumb-item active">Index
-                                    </li>
-                                </ol>
-                            </div>
+  <!-- BEGIN: Content-->
+  <div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+            <div class="content-header-left col-md-9 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="col-12">
+                        <h2 class="content-header-title float-start mb-0">Dashboard</h2>
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
+                                </li>
+                                <li class="breadcrumb-item active">Index
+                                </li>
+                            </ol>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="content-body">
-                <!-- Kick start -->
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Kick start your next project 🚀</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text">
-                            <p>
-                                Getting start with your project custom requirements using a ready template which is quite difficult and time
-                                taking process, Vuexy Admin provides useful features to kick start your project development with no efforts !
-                            </p>
-                            <ul>
-                                <li>
-                                    Vuexy Admin provides you getting start pages with different layouts, use the layout as per your custom
-                                    requirements and just change the branding, menu &amp; content.
-                                </li>
-                                <li>
-                                    Every components in Vuexy Admin are decoupled, it means use use only components you actually need! Remove
-                                    unnecessary and extra code easily just by excluding the path to specific SCSS, JS file.
-                                </li>
-                            </ul>
+        </div>
+        <div class="content-body">
+            <div class="row match-height">
+                <!-- Greetings Card starts -->
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="card card-congratulations">
+                        <div class="card-body text-center">
+                            <img src="/static/app-assets/images/elements/decore-left.png" class="congratulations-img-left" alt="card-img-left" />
+                            <img src="/static/app-assets/images/elements/decore-right.png" class="congratulations-img-right" alt="card-img-right" />
+                            <div class="avatar avatar-xl bg-primary shadow">
+                                <div class="avatar-content">
+                                    <i data-feather="award" class="font-large-1"></i>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <h1 class="mb-1 text-white">Congratulations {{user_data[1]}},</h1>
+                                <p class="card-text m-auto w-75">
+                                    Your daily steps have increased by 57.6%. Track your progress in your health profile.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!--/ Kick start -->
-
-                <!-- Page layout -->
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">What is page layout?</h4>
+                <!-- Greetings Card ends -->
+            </div>
+            <div class="row match-height">
+                <!-- Steps Chart Card starts -->
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-header flex-column align-items-start pb-0">
+                            <div class="avatar bg-light-primary p-50 m-0">
+                                <div class="avatar-content">
+                                    <i data-feather="activity" class="font-medium-5"></i>
+                                </div>
+                            </div>
+                            <h2 class="fw-bolder mt-1">12,500</h2>
+                            <p class="card-text">Steps Today</p>
+                        </div>
+                        <div id="steps-chart"></div>
                     </div>
-                    <div class="card-body">
-                        <div class="card-text">
-                            <p>
-                                Starter kit includes pages with different layouts, useful for your next project to start development process
-                                from scratch with no time.
-                            </p>
-                            <ul>
-                                <li>Each layout includes required only assets only.</li>
-                                <li>
-                                    Select your choice of layout from starter kit, customize it with optional changes like colors and branding,
-                                    add required dependency only.
-                                </li>
-                            </ul>
-                            <div class="alert alert-primary" role="alert">
-                                <div class="alert-body">
-                                    <strong>Info:</strong> Please check the &nbsp;<a class="text-primary" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation/documentation-layouts.html#layout-collapsed-menu" target="_blank">Layout documentation</a>&nbsp; for more layout options i.e collapsed menu, without menu, empty & blank.
+                </div>
+                <!-- Steps Chart Card ends -->
+            
+                <!-- Calories Burned Chart Card starts -->
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-header flex-column align-items-start pb-0">
+                            <div class="avatar bg-light-warning p-50 m-0">
+                                <div class="avatar-content">
+                                    <i data-feather="heart" class="font-medium-5"></i>
+                                </div>
+                            </div>
+                            <h2 class="fw-bolder mt-1">550</h2>
+                            <p class="card-text">Calories Burned</p>
+                        </div>
+                        <div id="calories-chart"></div>
+                    </div>
+                </div>
+                <!-- Calories Burned Chart Card ends -->
+            
+                <!-- Water Intake Chart Card starts -->
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-header flex-column align-items-start pb-0">
+                            <div class="avatar bg-light-info p-50 m-0">
+                                <div class="avatar-content">
+                                    <i data-feather="droplet" class="font-medium-5"></i>
+                                </div>
+                            </div>
+                            <h2 class="fw-bolder mt-1">1.5L</h2>
+                            <p class="card-text">Water Intake</p>
+                        </div>
+                        <div id="water-intake-chart"></div>
+                    </div>
+                </div>
+                <!-- Water Intake Chart Card ends -->
+            
+                <!-- Sleep Duration Chart Card starts -->
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-header flex-column align-items-start pb-0">
+                            <div class="avatar bg-light-success p-50 m-0">
+                                <div class="avatar-content">
+                                    <i data-feather="moon" class="font-medium-5"></i>
+                                </div>
+                            </div>
+                            <h2 class="fw-bolder mt-1">7h 30m</h2>
+                            <p class="card-text">Sleep Duration</p>
+                        </div>
+                        <div id="sleep-duration-chart"></div>
+                    </div>
+                </div>
+                <!-- Sleep Duration Chart Card ends -->
+            </div>
+            
+            <div class="row match-height">
+                <!-- Health Metrics Card starts -->
+                <div class="col-lg-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row pb-50">
+                                <div class="col-sm-6 col-12 d-flex justify-content-between flex-column order-sm-1 order-2 mt-1 mt-sm-0">
+                                    <div class="mb-1 mb-sm-0">
+                                        <h2 class="fw-bolder mb-25">75</h2>
+                                        <p class="card-text fw-bold mb-2">Average Heart Rate</p>
+                                        <div class="font-medium-2">
+                                            <span class="text-success me-25">-2.5%</span>
+                                            <span>vs last week</span>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-primary">View Details</button>
+                                </div>
+                                <div class="col-sm-6 col-12 d-flex justify-content-between flex-column text-end order-sm-2 order-1">
+                                    <div class="dropdown chart-dropdown">
+                                        <button class="btn btn-sm border-0 dropdown-toggle p-50" type="button" id="dropdownItem5" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Last 7 Days
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownItem5">
+                                            <a class="dropdown-item" href="#">Last 30 Days</a>
+                                            <a class="dropdown-item" href="#">Last Month</a>
+                                            <a class="dropdown-item" href="#">Last Year</a>
+                                        </div>
+                                    </div>
+                                    <div id="heart-rate-chart"></div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row health-metrics pt-50">
+                                <div class="col-6 mb-2">
+                                    <p class="mb-50">Weight: 150 lbs</p>
+                                    <div class="progress progress-bar-primary" style="height: 6px">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-2">
+                                    <p class="mb-50">Steps: 10,000</p>
+                                    <div class="progress progress-bar-warning" style="height: 6px">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="mb-50">Sleep Duration: 7 hrs</p>
+                                    <div class="progress progress-bar-danger" style="height: 6px">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="mb-50">Blood Pressure: 120/80</p>
+                                    <div class="progress progress-bar-success" style="height: 6px">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--/ Page layout -->
-
+                <!-- Health Metrics Card ends -->
+            
+                <!-- Medication Tracker Card starts -->
+                <div class="col-lg-6 col-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between pb-0">
+                            <h4 class="card-title">Medication Tracker</h4>
+                            <div class="dropdown chart-dropdown">
+                                <button class="btn btn-sm border-0 dropdown-toggle p-50" type="button" id="dropdownItem4" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Last 7 Days
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownItem4">
+                                    <a class="dropdown-item" href="#">Last 30 Days</a>
+                                    <a class="dropdown-item" href="#">Last Month</a>
+                                    <a class="dropdown-item" href="#">Last Year</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-2 col-12 d-flex flex-column flex-wrap text-center">
+                                    <h1 class="font-large-2 fw-bolder mt-2 mb-0">5</h1>
+                                    <p class="card-text">Medications</p>
+                                </div>
+                                <div class="col-sm-10 col-12 d-flex justify-content-center">
+                                    <div id="medication-tracker-chart"></div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mt-1">
+                                <div class="text-center">
+                                    <p class="card-text mb-50">Upcoming Medications</p>
+                                    <span class="font-large-1 fw-bold">3</span>
+                                </div>
+                                <div class="text-center">
+                                    <p class="card-text mb-50">Missed Medications</p>
+                                    <span class="font-large-1 fw-bold">1</span>
+                                </div>
+                                <div class="text-center">
+                                    <p class="card-text mb-50">Medication Adherence</p>
+                                    <span class="font-large-1 fw-bold">60%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Medication Tracker Card ends -->
             </div>
+            
         </div>
     </div>
-    <!-- END: Content-->
+</div>
+<!-- END: Content-->
 
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
