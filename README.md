@@ -2,6 +2,8 @@
 
 Swasthyakundli is a Flask-based web application that provides personalized health horoscopes and wellness recommendations.
 
+# PPT :- https://www.canva.com/design/DAFvYMoNjSM/0OYuP2nNl442mnA8lU1rJQ/edit
+
 ## Getting Started
 
 Follow these steps to get your Swasthyakundli Flask application up and running.
