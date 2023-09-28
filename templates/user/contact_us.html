@@ -1,0 +1,196 @@
+{% extends '/user/base.html' %}
+{% block body %}
+ <!-- BEGIN: Main Menu-->
+ <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item me-auto"><a class="navbar-brand" href="index.html">
+                <span class="brand-logo">
+                    <!-- <img src="/static/app-assets/images/logo/logo.png" alt="logo"> -->
+                    </span>
+                    <h2 class="brand-text">Swasthyakundli</h2>
+                </a></li>
+        </ul>
+    </div>
+    <div class="shadow-bottom"></div>
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User">
+                    <i data-feather="home"></i>
+                    <span class="menu-title text-truncate" data-i18n="Home">Dashboard</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/record">
+                    <i data-feather="clipboard"></i>
+                    <span class="menu-title text-truncate" data-i18n="Record Your Health Data">Personal Data</span>
+                </a>
+            </li>
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User/recordData">
+                    <i data-feather="clipboard"></i>
+                    <span class="menu-title text-truncate" data-i18n="Record Your Health Data">Record Your Health Data</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_history">
+                    <i data-feather="book"></i>
+                    <span class="menu-title text-truncate" data-i18n="Health History">Health History</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/family_health_tree">
+                    <i data-feather='list'></i>
+                    <span class="menu-title text-truncate" data-i18n="Family Health Tree">Family Health Tree</span>
+                </a>
+            </li>
+            
+            <li class="  nav-item">
+                <a class="d-flex align-items-center" href="/User/care_centers">
+                    <i data-feather='plus-square'></i>
+                    <span class="menu-title text-truncate" data-i18n="Care Centers">Care Centers</span>
+                </a>
+            </li>
+
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User/blood_centers">
+                    <i data-feather='plus-square'></i>
+                    <span class="menu-title text-truncate" data-i18n="Care Centers">Blood Centers</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/care_team">
+                    <i data-feather="users"></i>
+                    <span class="menu-title text-truncate" data-i18n="Your Care Team">Your Care Team</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/coverage_benefits">
+                    <i data-feather="shield"></i>
+                    <span class="menu-title text-truncate" data-i18n="Coverage Benefits">Coverage Benefits</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/community_support">
+                    <i data-feather="heart"></i>
+                    <span class="menu-title text-truncate" data-i18n="Community Support">Community Support</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/healthcare_policies">
+                    <i data-feather="file-text"></i>
+                    <span class="menu-title text-truncate" data-i18n="Healthcare Policies">Healthcare Policies</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_tips">
+                    <i data-feather='cpu'></i>
+                    <span class="menu-title text-truncate" data-i18n="Smart Health Tips">Smart Health Tips</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_devices">
+                    <i data-feather='watch'></i>
+                    <span class="menu-title text-truncate" data-i18n="Connect Health Devices">Connect Health Devices</span>
+                </a>
+            </li>
+            
+            <li class="active nav-item">
+                <a class="d-flex align-items-center" href="/User/contact_us">
+                    <i data-feather='phone'></i>
+                    <span class="menu-title text-truncate" data-i18n="Get in Touch">Get in Touch</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+<!-- END: Main Menu-->
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">Get in Touch</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="contact-us.html">Get in Touch</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">Contact-Us
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <!-- Validation -->
+                <section class="bs-validation">
+                    <div class="row">
+                        <!-- Bootstrap Validation -->
+                        <div class="col-md-12 col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Contact Us</h4>
+                                </div>
+                                <div class="card-body">
+                                    <form class="needs-validation" novalidate>
+                                        <div class="mb-1">
+                                            <label class="form-label" for="basic-addon-name">Name</label>
+                                            <input type="text" id="basic-addon-name" class="form-control" placeholder="Your Name" aria-label="Your Name" aria-describedby="basic-addon-name" required />
+                                            <div class="valid-feedback">Looks good!</div>
+                                            <div class="invalid-feedback">Please enter your name.</div>
+                                        </div>
+                                        <div class="mb-1">
+                                            <label class="form-label" for="basic-default-email1">Email</label>
+                                            <input type="email" id="basic-default-email1" class="form-control" placeholder="Your Email" aria-label="Your Email" required />
+                                            <div class="valid-feedback">Looks good!</div>
+                                            <div class="invalid-feedback">Please enter a valid email</div>
+                                        </div>
+                                        <div class="mb-1">
+                                            <label class="form-label" for="validationCustomUsername">Username</label>
+                                            <div class="input-group has-validation">
+                                                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required />
+                                                <div class="invalid-feedback">Please choose a username.</div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-1">
+                                            <label class="form-label" class="d-block">Message</label>
+                                            <textarea class="form-control" id="validationBioBootstrap" name="validationBioBootstrap" rows="4" required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!-- /Bootstrap Validation -->
+                    </div>
+                </section>
+                <!-- /Validation -->
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+  {% endblock %}

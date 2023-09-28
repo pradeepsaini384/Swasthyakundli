@@ -1,0 +1,496 @@
+{% extends '/user/base.html' %}
+{% block pagecss %}
+     <!-- BEGIN: Page CSS-->
+     <link rel="stylesheet" type="text/css" href="/static/app-assets/css/core/menu/menu-types/vertical-menu.css">
+     <link rel="stylesheet" type="text/css" href="/static/app-assets/css/plugins/forms/form-wizard.css">
+     <link rel="stylesheet" type="text/css" href="/static/app-assets/css/plugins/forms/form-validation.css">
+     <link rel="stylesheet" type="text/css" href="/static/app-assets/css/pages/modal-create-app.css">
+     <!-- END: Page CSS-->{% endblock %}
+{% block body %}
+  <!-- BEGIN: Main Menu-->
+  <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item me-auto"><a class="navbar-brand" href="index.html">
+                <span class="brand-logo">
+                    <!-- <img src="/static/app-assets/images/logo/logo.png" alt="logo"> -->
+                    </span>
+                    <h2 class="brand-text">Swasthyakundli</h2>
+                </a></li>
+        </ul>
+    </div>
+    <div class="shadow-bottom"></div>
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User">
+                    <i data-feather="home"></i>
+                    <span class="menu-title text-truncate" data-i18n="Home">Dashboard</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/record">
+                    <i data-feather="clipboard"></i>
+                    <span class="menu-title text-truncate" data-i18n="Record Your Health Data">Personal Data</span>
+                </a>
+            </li>
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User/recordData">
+                    <i data-feather="clipboard"></i>
+                    <span class="menu-title text-truncate" data-i18n="Record Your Health Data">Record Your Health Data</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_history">
+                    <i data-feather="book"></i>
+                    <span class="menu-title text-truncate" data-i18n="Health History">Health History</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/family_health_tree">
+                    <i data-feather='list'></i>
+                    <span class="menu-title text-truncate" data-i18n="Family Health Tree">Family Health Tree</span>
+                </a>
+            </li>
+            
+            <li class=" active nav-item">
+                <a class="d-flex align-items-center" href="/User/care_centers">
+                    <i data-feather='plus-square'></i>
+                    <span class="menu-title text-truncate" data-i18n="Care Centers">Care Centers</span>
+                </a>
+            </li>
+
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User/blood_centers">
+                    <i data-feather='plus-square'></i>
+                    <span class="menu-title text-truncate" data-i18n="Care Centers">Blood Centers</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/care_team">
+                    <i data-feather="users"></i>
+                    <span class="menu-title text-truncate" data-i18n="Your Care Team">Your Care Team</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/coverage_benefits">
+                    <i data-feather="shield"></i>
+                    <span class="menu-title text-truncate" data-i18n="Coverage Benefits">Coverage Benefits</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/community_support">
+                    <i data-feather="heart"></i>
+                    <span class="menu-title text-truncate" data-i18n="Community Support">Community Support</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/healthcare_policies">
+                    <i data-feather="file-text"></i>
+                    <span class="menu-title text-truncate" data-i18n="Healthcare Policies">Healthcare Policies</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_tips">
+                    <i data-feather='cpu'></i>
+                    <span class="menu-title text-truncate" data-i18n="Smart Health Tips">Smart Health Tips</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_devices">
+                    <i data-feather='watch'></i>
+                    <span class="menu-title text-truncate" data-i18n="Connect Health Devices">Connect Health Devices</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/contact_us">
+                    <i data-feather='phone'></i>
+                    <span class="menu-title text-truncate" data-i18n="Get in Touch">Get in Touch</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+<!-- END: Main Menu-->
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">Care Centers</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="care-centers.html">Care Centers</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">Care-Centers
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <section id="modal-examples">
+                    <div class="row">
+                        <!-- create app card-->
+                        <div class="row" id="card-container">
+                            <!-- Cards will be dynamically added here -->
+                        </div>
+                        
+                        
+                        <!-- / create app card-->
+                        <!-- create app modal -->
+                        <div class="modal fade" id="bookAppointmentModal" tabindex="-1" aria-labelledby="bookAppointmentTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-transparent">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body pb-3 px-sm-3">
+                                        <h1 class="text-center mb-1" id="bookAppointmentTitle">Book Appointment</h1>
+                                        <p class="text-center mb-2">Please provide the following information to book your appointment</p>
+                        
+                                        <div class="bs-stepper vertical wizard-modern create-app-wizard">
+                                            <div class="bs-stepper-header" role="tablist">
+                                                <div class="step" data-target="#create-app-details" role="tab" id="create-app-details-trigger">
+                                                    <button type="button" class="step-trigger py-75">
+                                                        <span class="bs-stepper-box">
+                                                            <i data-feather="book" class="font-medium-3"></i>
+                                                        </span>
+                                                        <span class="bs-stepper-label">
+                                                            <span class="bs-stepper-title">Details</span>
+                                                            <span class="bs-stepper-subtitle">Enter username</span>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <div class="step" data-target="#create-app-frameworks" role="tab" id="create-app-frameworks-trigger">
+                                                    <button type="button" class="step-trigger py-75">
+                                                        <span class="bs-stepper-box">
+                                                            <i data-feather="package" class="font-medium-3"></i>
+                                                        </span>
+                                                        <span class="bs-stepper-label">
+                                                            <span class="bs-stepper-title">Doctors</span>
+                                                            <span class="bs-stepper-subtitle">Enter Information</span>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <div class="step" data-target="#create-app-billing" role="tab" id="create-app-billing-trigger">
+                                                    <button type="button" class="step-trigger py-75">
+                                                        <span class="bs-stepper-box">
+                                                            <i data-feather="credit-card" class="font-medium-3"></i>
+                                                        </span>
+                                                        <span class="bs-stepper-label">
+                                                            <span class="bs-stepper-title">Billing</span>
+                                                            <span class="bs-stepper-subtitle">Payment details</span>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <div class="step" data-target="#create-app-submit" role="tab" id="create-app-submit-trigger">
+                                                    <button type="button" class="step-trigger py-75">
+                                                        <span class="bs-stepper-box">
+                                                            <i data-feather="check" class="font-medium-3"></i>
+                                                        </span>
+                                                        <span class="bs-stepper-label">
+                                                            <span class="bs-stepper-title">Submit</span>
+                                                            <span class="bs-stepper-subtitle">Submit your app</span>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+        
+                                            <!-- content -->
+                                            <div class="bs-stepper-content shadow-none">
+                                                <div id="create-app-details" class="content" role="tabpanel" aria-labelledby="create-app-details-trigger">
+                                                    <form>
+                                                        <div class="mb-3">
+                                                            <label for="name" class="form-label">Name</label>
+                                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                                        </div>
+                                                
+                                                        <div class="mb-3">
+                                                            <label for="age" class="form-label">Age</label>
+                                                            <input type="number" class="form-control" id="age" placeholder="Your Age">
+                                                        </div>
+                                                
+                                                        <div class="mb-3">
+                                                            <label for="date" class="form-label">Date</label>
+                                                            <input type="date" class="form-control" id="date">
+                                                        </div>
+                                                
+                                                        <div class="mb-3">
+                                                            <label for="weight" class="form-label">Weight</label>
+                                                            <input type="number" class="form-control" id="weight" placeholder="Weight (in kg)">
+                                                        </div>
+                                                
+                                                        <div class="mb-3">
+                                                            <label for="reason" class="form-label">Reason</label>
+                                                            <textarea class="form-control" id="reason" rows="3" placeholder="Reason for appointment"></textarea>
+                                                        </div>
+                                                
+                                                        <div class="mb-3">
+                                                            <label for="time" class="form-label">Time</label>
+                                                            <input type="time" class="form-control" id="time">
+                                                        </div>
+                                                    </form>
+                                                
+                                                    <div class="d-flex justify-content-between mt-2">
+                                                        <button class="btn btn-outline-secondary btn-prev" disabled>
+                                                            <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
+                                                            <span class="align-middle d-sm-inline-block d-none">Previous</span>
+                                                        </button>
+                                                        <button class="btn btn-primary btn-next">
+                                                            <span class="align-middle d-sm-inline-block d-none">Next</span>
+                                                            <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div id="create-app-frameworks" class="content" role="tabpanel" aria-labelledby="create-app-frameworks-trigger">
+                                                    <h5>Select Framework</h5>
+                                                    <ul class="list-group list-group-flush">
+                                                        <!-- Add more doctors here -->
+                                                        <li class="list-group-item border-0 px-0">
+                                                            <label for="createAppDoctor1" class="d-flex cursor-pointer">
+                                                                <span class="avatar avatar-tag bg-light-success me-1">
+                                                                    <!-- Add a doctor's image here if needed -->
+                                                                </span>
+                                                                <span class="d-flex align-items-center justify-content-between flex-grow-1">
+                                                                    <span class="me-1">
+                                                                        <span class="h5 d-block fw-bolder">Dr. John Doe</span>
+                                                                        <span>Cardiologist</span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <input class="form-check-input" id="createAppDoctor1" type="radio" name="frameworkRadio" />
+                                                                    </span>
+                                                                </span>
+                                                            </label>
+                                                        </li>
+                                                        <li class="list-group-item border-0 px-0">
+                                                            <label for="createAppDoctor2" class="d-flex cursor-pointer">
+                                                                <span class="avatar avatar-tag bg-light-warning me-1">
+                                                                    <!-- Add a doctor's image here if needed -->
+                                                                </span>
+                                                                <span class="d-flex align-items-center justify-content-between flex-grow-1">
+                                                                    <span class="me-1">
+                                                                        <span class="h5 d-block fw-bolder">Dr. Jane Smith</span>
+                                                                        <span>Orthopedic Surgeon</span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <input class="form-check-input" id="createAppDoctor2" type="radio" name="frameworkRadio" />
+                                                                    </span>
+                                                                </span>
+                                                            </label>
+                                                        </li>
+                                                        <li class="list-group-item border-0 px-0">
+                                                            <label for="createAppDoctor2" class="d-flex cursor-pointer">
+                                                                <span class="avatar avatar-tag bg-light-warning me-1">
+                                                                    <!-- Add a doctor's image here if needed -->
+                                                                </span>
+                                                                <span class="d-flex align-items-center justify-content-between flex-grow-1">
+                                                                    <span class="me-1">
+                                                                        <span class="h5 d-block fw-bolder">Dr. Ram Swami</span>
+                                                                        <span>Orthopedic Surgeon</span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <input class="form-check-input" id="createAppDoctor2" type="radio" name="frameworkRadio" />
+                                                                    </span>
+                                                                </span>
+                                                            </label>
+                                                        </li>
+                                                        <li class="list-group-item border-0 px-0">
+                                                            <label for="createAppDoctor2" class="d-flex cursor-pointer">
+                                                                <span class="avatar avatar-tag bg-light-warning me-1">
+                                                                    <!-- Add a doctor's image here if needed -->
+                                                                </span>
+                                                                <span class="d-flex align-items-center justify-content-between flex-grow-1">
+                                                                    <span class="me-1">
+                                                                        <span class="h5 d-block fw-bolder">Dr. Pradeep Saini</span>
+                                                                        <span>Orthopedic Surgeon</span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <input class="form-check-input" id="createAppDoctor2" type="radio" name="frameworkRadio" />
+                                                                    </span>
+                                                                </span>
+                                                            </label>
+                                                        </li>
+                                                        <!-- Add more doctors as needed -->
+                                                    </ul>
+                                                    <div class="d-flex justify-content-between mt-2">
+                                                        <button class="btn btn-primary btn-prev">
+                                                            <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
+                                                            <span class="align-middle d-sm-inline-block d-none">Previous</span>
+                                                        </button>
+                                                        <button class="btn btn-primary btn-next">
+                                                            <span class="align-middle d-sm-inline-block d-none">Next</span>
+                                                            <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div id="create-app-billing" class="content" role="tabpanel" aria-labelledby="create-app-billing-trigger">
+                                                    <h5 class="mb-1">Category</h5>
+        
+                                                    <!-- form -->
+                                                    <form id="createAppBillingForm" class="row gy-1 gx-2" onsubmit="return false">
+                                                        <div class="col-12">
+                                                            <label class="form-label" for="cardNumberBilling">Card Number</label>
+                                                            <div class="input-group input-group-merge">
+                                                                <input id="cardNumberBilling" name="cardNumberBillingModal" class="form-control create-app-card-mask" type="text" value="5637817212901451" placeholder="1356 3215 6548 7898" aria-describedby="cardNumberBillingModal1" />
+                                                                <span class="input-group-text cursor-pointer p-25" id="cardNumberBillingModal1">
+                                                                    <span class="credit-app-card-type"></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+        
+                                                        <div class="col-md-6">
+                                                            <label class="form-label" for="nameOnCardBilling">Name On Card</label>
+                                                            <input type="text" id="nameOnCardBilling" class="form-control" placeholder="John Doe" />
+                                                        </div>
+        
+                                                        <div class="col-6 col-md-3">
+                                                            <label class="form-label" for="expDateBilling">Exp. Date</label>
+                                                            <input type="text" id="expDateBilling" class="form-control create-app-expiry-date-mask" placeholder="MM/YY" />
+                                                        </div>
+        
+                                                        <div class="col-6 col-md-3">
+                                                            <label class="form-label" for="cvvBilling">CVV</label>
+                                                            <input type="text" id="cvvBilling" class="form-control create-app-cvv-code-mask" maxlength="3" placeholder="654" />
+                                                        </div>
+        
+                                                        <div class="col-12">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="form-check form-switch form-check-primary me-25">
+                                                                    <input type="checkbox" class="form-check-input" id="saveCardBilling" checked />
+                                                                    <label class="form-check-label" for="saveCardBilling">
+                                                                        <span class="switch-icon-left"><i data-feather="check"></i></span>
+                                                                        <span class="switch-icon-right"><i data-feather="x"></i></span>
+                                                                    </label>
+                                                                </div>
+                                                                <label class="form-check-label fw-bolder" for="saveCardBilling">
+                                                                    Save Card for future billing?
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+        
+                                                    <div class="d-flex justify-content-between mt-5 pt-1">
+                                                        <button class="btn btn-primary btn-prev">
+                                                            <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
+                                                            <span class="align-middle d-sm-inline-block d-none">Previous</span>
+                                                        </button>
+                                                        <button class="btn btn-primary btn-next">
+                                                            <span class="align-middle d-sm-inline-block d-none">Next</span>
+                                                            <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div id="create-app-submit" class="content text-center" role="tabpanel" aria-labelledby="create-app-submit-trigger">
+                                                    <h3>Submit 🥳</h3>
+                                                    <p>Submit your app to kickstart your project.</p>
+                                                    <img src="/static/app-assets/images/illustration/pricing-Illustration.svg" height="218" alt="illustration" />
+                                                    <div class="d-flex justify-content-between mt-3">
+                                                        <button class="btn btn-primary btn-prev">
+                                                            <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
+                                                            <span class="align-middle d-sm-inline-block d-none">Previous</span>
+                                                        </button>
+                                                        <button class="btn btn-success btn-submit">
+                                                            <span class="align-middle d-sm-inline-block d-none">Submit</span>
+                                                            <i data-feather="check" class="align-middle ms-sm-25 ms-0"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                <!-- / create app modal -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    
+    {% endblock %}
+    
+    {% block pagejs %}
+    <!-- BEGIN: Page JS-->
+    <script src="/static/app-assets/js/scripts/pages/modal-add-new-cc.js"></script>
+    <script src="/static/app-assets/js/scripts/pages/page-pricing.js"></script>
+    <script src="/static/app-assets/js/scripts/pages/modal-add-new-address.js"></script>
+    <script src="/static/app-assets/js/scripts/pages/modal-create-app.js"></script>
+    <script src="/static/app-assets/js/scripts/pages/modal-two-factor-auth.js"></script>
+    <script src="/static/app-assets/js/scripts/pages/modal-edit-user.js"></script>
+    <script src="/static/app-assets/js/scripts/pages/modal-share-project.js"></script>
+    <script>
+        // Function to fetch data from the API and populate cards
+        function fetchAndPopulateData() {
+            // Define the API URL
+            var apiUrl = "https://api.data.gov.in/resource/de59e770-2333-4eaf-9088-a3643de040c8?api-key=579b464db66ec23bdd000001632b336f56834f2054f46036789c78e4&format=json&limit=20&filters%5B_cityname_%5D=jaipur";
+    
+            // Make an AJAX request to the API
+            $.ajax({
+                url: apiUrl,
+                method: "GET",
+                success: function (data) {
+                    // Assuming the API response is in JSON format
+                    var records = data.records; // Assuming the API response contains an array of records
+    
+                    // Iterate through the records and create cards
+                    for (var i = 0; i < records.length; i++) {
+                        var hospitalname = records[i].hospitalname; // Update this with the actual JSON structure
+                        var description = records[i].hospitaladdress; // Update this with the actual JSON structure
+    
+                        // Create a new card element
+                        var cardHtml = `
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <i data-feather="calendar" class="font-large-2 mb-1"></i>
+                                        <h5 class="card-title">${hospitalname}</h5>
+                                        <p class="card-text">${description}</p>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookAppointmentModal">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+    
+                        // Append the card to the card container
+                        $("#card-container").append(cardHtml);
+                    }
+                },
+                error: function (error) {
+                    console.error("Error fetching data: ", error);
+                }
+            });
+        }
+    
+        // Call the function to fetch and populate data when the document is ready
+        $(document).ready(function () {
+            fetchAndPopulateData();
+        });
+    </script>
+    <!-- END: Page JS-->{% endblock %}

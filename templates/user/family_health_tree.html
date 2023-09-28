@@ -1,0 +1,282 @@
+
+
+{% extends '/user/base.html' %}
+{% block pagecss %}
+<link rel="stylesheet" type="text/css" href="/static/app-assets/css/pages/app-chat-list.css">
+{% endblock %}
+{% block body %}
+
+ <!-- BEGIN: Main Menu-->
+ <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item me-auto"><a class="navbar-brand" href="index.html">
+                <span class="brand-logo">
+                    <!-- <img src="/static/app-assets/images/logo/logo.png" alt="logo"> -->
+                    </span>
+                    <h2 class="brand-text">Swasthyakundli</h2>
+                </a></li>
+        </ul>
+    </div>
+    <div class="shadow-bottom"></div>
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User">
+                    <i data-feather="home"></i>
+                    <span class="menu-title text-truncate" data-i18n="Home">Dashboard</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/record">
+                    <i data-feather="clipboard"></i>
+                    <span class="menu-title text-truncate" data-i18n="Record Your Health Data">Personal Data</span>
+                </a>
+            </li>
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User/recordData">
+                    <i data-feather="clipboard"></i>
+                    <span class="menu-title text-truncate" data-i18n="Record Your Health Data">Record Your Health Data</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_history">
+                    <i data-feather="book"></i>
+                    <span class="menu-title text-truncate" data-i18n="Health History">Health History</span>
+                </a>
+            </li>
+            
+            <li class="active nav-item">
+                <a class="d-flex align-items-center" href="/User/family_health_tree">
+                    <i data-feather='list'></i>
+                    <span class="menu-title text-truncate" data-i18n="Family Health Tree">Family Health Tree</span>
+                </a>
+            </li>
+            
+            <li class="  nav-item">
+                <a class="d-flex align-items-center" href="/User/care_centers">
+                    <i data-feather='plus-square'></i>
+                    <span class="menu-title text-truncate" data-i18n="Care Centers">Care Centers</span>
+                </a>
+            </li>
+            
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User/blood_centers">
+                    <i data-feather='plus-square'></i>
+                    <span class="menu-title text-truncate" data-i18n="Care Centers">Blood Centers</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/care_team">
+                    <i data-feather="users"></i>
+                    <span class="menu-title text-truncate" data-i18n="Your Care Team">Your Care Team</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/coverage_benefits">
+                    <i data-feather="shield"></i>
+                    <span class="menu-title text-truncate" data-i18n="Coverage Benefits">Coverage Benefits</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/community_support">
+                    <i data-feather="heart"></i>
+                    <span class="menu-title text-truncate" data-i18n="Community Support">Community Support</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/healthcare_policies">
+                    <i data-feather="file-text"></i>
+                    <span class="menu-title text-truncate" data-i18n="Healthcare Policies">Healthcare Policies</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_tips">
+                    <i data-feather='cpu'></i>
+                    <span class="menu-title text-truncate" data-i18n="Smart Health Tips">Smart Health Tips</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_devices">
+                    <i data-feather='watch'></i>
+                    <span class="menu-title text-truncate" data-i18n="Connect Health Devices">Connect Health Devices</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/contact_us">
+                    <i data-feather='phone'></i>
+                    <span class="menu-title text-truncate" data-i18n="Get in Touch">Get in Touch</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+<!-- END: Main Menu-->
+   <!-- BEGIN: Content-->
+   <div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+            <div class="content-header-left col-md-9 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="col-12">
+                        <h2 class="content-header-title float-start mb-0">Family Health Tree</h2>
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="family-health-tree.html">Family Health Tree</a>
+                                </li>
+                                <li class="breadcrumb-item active">Family-Health-Tree
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="row match-height">
+                <!-- First Card -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card card-profile">
+                        <img src="/static/app-assets/images/banner/banner-12.jpg" class="img-fluid card-img-top" alt="Profile Cover Photo" />
+                        <div class="card-body">
+                            <div class="profile-image-wrapper">
+                                <div class="profile-image">
+                                    <div class="avatar">
+                                        <img src="/static/app-assets/images/portrait/small/avatar-s-9.jpg" alt="Profile Picture" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Update the name of the family member -->
+                            <h3>John Doe</h3>
+                            <!-- Update the relationship or location -->
+                            <h6 class="text-muted">Spouse</h6>
+                            <!-- Optionally, you can use badges to indicate specific information -->
+                            <span class="badge badge-light-primary profile-badge">Family Member</span>
+                            <hr class="mb-2" />
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <!-- Update the number of appointments -->
+                                    <h6 class="text-muted fw-bolder">Appointments</h6>
+                                    <h3 class="mb-0">5</h3>
+                                </div>
+                                <div>
+                                    <!-- Update the medical history details -->
+                                    <h6 class="text-muted fw-bolder">Medical History</h6>
+                                    <h3 class="mb-0">Available</h3>
+                                </div>
+                                <div>
+                                    <!-- Update the age -->
+                                    <h6 class="text-muted fw-bolder">Age</h6>
+                                    <h3 class="mb-0">45</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Second Card -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card card-profile">
+                        <img src="/static/app-assets/images/banner/banner-12.jpg" class="img-fluid card-img-top" alt="Profile Cover Photo" />
+                        <div class="card-body">
+                            <div class="profile-image-wrapper">
+                                <div class="profile-image">
+                                    <div class="avatar">
+                                        <img src="/static/app-assets/images/portrait/small/avatar-s-10.jpg" alt="Profile Picture" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Update the name of the family member -->
+                            <h3>Jane Smith</h3>
+                            <!-- Update the relationship or location -->
+                            <h6 class="text-muted">Child</h6>
+                            <!-- Optionally, you can use badges to indicate specific information -->
+                            <span class="badge badge-light-primary profile-badge">Family Member</span>
+                            <hr class="mb-2" />
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <!-- Update the number of appointments -->
+                                    <h6 class="text-muted fw-bolder">Appointments</h6>
+                                    <h3 class="mb-0">3</h3>
+                                </div>
+                                <div>
+                                    <!-- Update the medical history details -->
+                                    <h6 class="text-muted fw-bolder">Medical History</h6>
+                                    <h3 class="mb-0">Available</h3>
+                                </div>
+                                <div>
+                                    <!-- Update the age -->
+                                    <h6 class="text-muted fw-bolder">Age</h6>
+                                    <h3 class="mb-0">28</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Third Card -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card card-profile">
+                        <img src="/static/app-assets/images/banner/banner-12.jpg" class="img-fluid card-img-top" alt="Profile Cover Photo" />
+                        <div class="card-body">
+                            <div class="profile-image-wrapper">
+                                <div class="profile-image">
+                                    <div class="avatar">
+                                        <img src="/static/app-assets/images/portrait/small/avatar-s-11.jpg" alt="Profile Picture" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Update the name of the family member -->
+                            <h3>Mary Johnson</h3>
+                            <!-- Update the relationship or location -->
+                            <h6 class="text-muted">Parent</h6>
+                            <!-- Optionally, you can use badges to indicate specific information -->
+                            <span class="badge badge-light-primary profile-badge">Family Member</span>
+                            <hr class="mb-2" />
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <!-- Update the number of appointments -->
+                                    <h6 class="text-muted fw-bolder">Appointments</h6>
+                                    <h3 class="mb-0">7</h3>
+                                </div>
+                                <div>
+                                    <!-- Update the medical history details -->
+                                    <h6 class="text-muted fw-bolder">Medical History</h6>
+                                    <h3 class="mb-0">Available</h3>
+                                </div>
+                                <div>
+                                    <!-- Update the age -->
+                                    <h6 class="text-muted fw-bolder">Age</h6>
+                                    <h3 class="mb-0">55</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more family member cards if needed -->
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+<!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <!-- BEGIN: Footer-->
+  {% endblock %}

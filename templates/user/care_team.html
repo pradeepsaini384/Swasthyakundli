@@ -1,0 +1,277 @@
+{% extends '/user/base.html' %}
+{% block body %}
+ <!-- BEGIN: Main Menu-->
+ <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item me-auto"><a class="navbar-brand" href="index.html">
+                <span class="brand-logo">
+                    <!-- <img src="/static/app-assets/images/logo/logo.png" alt="logo"> -->
+                    </span>
+                    <h2 class="brand-text">Swasthyakundli</h2>
+                </a></li>
+        </ul>
+    </div>
+    <div class="shadow-bottom"></div>
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User">
+                    <i data-feather="home"></i>
+                    <span class="menu-title text-truncate" data-i18n="Home">Dashboard</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/record">
+                    <i data-feather="clipboard"></i>
+                    <span class="menu-title text-truncate" data-i18n="Record Your Health Data">Personal Data</span>
+                </a>
+            </li>
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User/recordData">
+                    <i data-feather="clipboard"></i>
+                    <span class="menu-title text-truncate" data-i18n="Record Your Health Data">Record Your Health Data</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_history">
+                    <i data-feather="book"></i>
+                    <span class="menu-title text-truncate" data-i18n="Health History">Health History</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/family_health_tree">
+                    <i data-feather='list'></i>
+                    <span class="menu-title text-truncate" data-i18n="Family Health Tree">Family Health Tree</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/care_centers">
+                    <i data-feather='plus-square'></i>
+                    <span class="menu-title text-truncate" data-i18n="Care Centers">Care Centers</span>
+                </a>
+            </li>
+
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User/blood_centers">
+                    <i data-feather='plus-square'></i>
+                    <span class="menu-title text-truncate" data-i18n="Care Centers">Blood Centers</span>
+                </a>
+            </li>
+            
+            <li class="active nav-item">
+                <a class="d-flex align-items-center" href="/User/care_team">
+                    <i data-feather="users"></i>
+                    <span class="menu-title text-truncate" data-i18n="Your Care Team">Your Care Team</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/coverage_benefits">
+                    <i data-feather="shield"></i>
+                    <span class="menu-title text-truncate" data-i18n="Coverage Benefits">Coverage Benefits</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/community_support">
+                    <i data-feather="heart"></i>
+                    <span class="menu-title text-truncate" data-i18n="Community Support">Community Support</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/healthcare_policies">
+                    <i data-feather="file-text"></i>
+                    <span class="menu-title text-truncate" data-i18n="Healthcare Policies">Healthcare Policies</span>
+                </a>
+            </li>
+            
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User/health_tips">
+                    <i data-feather='cpu'></i>
+                    <span class="menu-title text-truncate" data-i18n="Smart Health Tips">Smart Health Tips</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_devices">
+                    <i data-feather='watch'></i>
+                    <span class="menu-title text-truncate" data-i18n="Connect Health Devices">Connect Health Devices</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/contact_us">
+                    <i data-feather='phone'></i>
+                    <span class="menu-title text-truncate" data-i18n="Get in Touch">Get in Touch</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+<!-- END: Main Menu-->
+ 
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">Your Care Team</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="care-team.html">Your Care Team</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">Care-Team
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+
+                <section id="card-demo-example">
+                    <div class="row match-height">
+                        <!-- Card 1 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Dr. John Doe</h4>
+                                    <p class="card-text">
+                                        Dr. John Doe is a specialist in cardiology with over 15 years of experience. He is dedicated to providing the best cardiac care to his patients.
+                                    </p>
+                                    <a href="#" class="btn btn-outline-primary">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Card 2 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Dr. Jane Smith</h4>
+                                    <p class="card-text">
+                                        Dr. Jane Smith is an orthopedic surgeon known for her expertise in joint replacements. She has successfully treated thousands of patients.
+                                    </p>
+                                    <a href="#" class="btn btn-outline-primary">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Card 3 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Dr. Sarah Patel</h4>
+                                    <p class="card-text">
+                                        Dr. Sarah Patel is a renowned pediatrician with a passion for child healthcare. She provides compassionate care to young patients.
+                                    </p>
+                                    <a href="#" class="btn btn-outline-primary">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Card 4 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Dr. Amit Kumar</h4>
+                                    <p class="card-text">
+                                        Dr. Amit Kumar is a skilled neurologist specializing in the treatment of neurological disorders. He is known for his expertise in the field.
+                                    </p>
+                                    <a href="#" class="btn btn-outline-primary">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Card 5 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Dr. Nisha Gupta</h4>
+                                    <p class="card-text">
+                                        Dr. Nisha Gupta is an experienced gynecologist known for her compassionate care for women's health issues. She has a strong track record of successful treatments.
+                                    </p>
+                                    <a href="#" class="btn btn-outline-primary">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Card 6 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Dr. Rahul Verma</h4>
+                                    <p class="card-text">
+                                        Dr. Rahul Verma is a skilled surgeon specializing in minimally invasive procedures. He is dedicated to ensuring quick recovery for his patients.
+                                    </p>
+                                    <a href="#" class="btn btn-outline-primary">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Card 7 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Dr. Priya Kapoor</h4>
+                                    <p class="card-text">
+                                        Dr. Priya Kapoor is an ophthalmologist known for her expertise in eye surgeries. She has improved the vision of countless patients.
+                                    </p>
+                                    <a href="#" class="btn btn-outline-primary">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Card 8 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Dr. Sanjay Agarwal</h4>
+                                    <p class="card-text">
+                                        Dr. Sanjay Agarwal is a leading dermatologist known for his advanced skincare treatments. He has helped patients achieve healthy and radiant skin.
+                                    </p>
+                                    <a href="#" class="btn btn-outline-primary">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Card 9 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Dr. Ramesh Singh</h4>
+                                    <p class="card-text">
+                                        Dr. Ramesh Singh is an experienced dentist known for his gentle and effective dental care. He ensures his patients have healthy smiles.
+                                    </p>
+                                    <a href="#" class="btn btn-outline-primary">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <!-- BEGIN: Footer-->
+    {% endblock %}

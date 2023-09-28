@@ -1,0 +1,335 @@
+{% extends '/user/base.html' %}
+{% block body %}
+ <!-- BEGIN: Main Menu-->
+ <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item me-auto"><a class="navbar-brand" href="index.html">
+                <span class="brand-logo">
+                    <!-- <img src="/static/app-assets/images/logo/logo.png" alt="logo"> -->
+                    </span>
+                    <h2 class="brand-text">Swasthyakundli</h2>
+                </a></li>
+        </ul>
+    </div>
+    <div class="shadow-bottom"></div>
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User">
+                    <i data-feather="home"></i>
+                    <span class="menu-title text-truncate" data-i18n="Home">Dashboard</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/record">
+                    <i data-feather="clipboard"></i>
+                    <span class="menu-title text-truncate" data-i18n="Record Your Health Data">Personal Data</span>
+                </a>
+            </li>
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User/recordData">
+                    <i data-feather="clipboard"></i>
+                    <span class="menu-title text-truncate" data-i18n="Record Your Health Data">Record Your Health Data</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_history">
+                    <i data-feather="book"></i>
+                    <span class="menu-title text-truncate" data-i18n="Health History">Health History</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/family_health_tree">
+                    <i data-feather='list'></i>
+                    <span class="menu-title text-truncate" data-i18n="Family Health Tree">Family Health Tree</span>
+                </a>
+            </li>
+            
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User/care_centers">
+                    <i data-feather='plus-square'></i>
+                    <span class="menu-title text-truncate" data-i18n="Care Centers">Care Centers</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/care_team">
+                    <i data-feather="users"></i>
+                    <span class="menu-title text-truncate" data-i18n="Your Care Team">Your Care Team</span>
+                </a>
+            </li>
+            
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User/blood_centers">
+                    <i data-feather='plus-square'></i>
+                    <span class="menu-title text-truncate" data-i18n="Care Centers">Blood Centers</span>
+                </a>
+            </li>
+            
+            <li class="active nav-item">
+                <a class="d-flex align-items-center" href="/User/coverage_benefits">
+                    <i data-feather="shield"></i>
+                    <span class="menu-title text-truncate" data-i18n="Coverage Benefits">Coverage Benefits</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/community_support">
+                    <i data-feather="heart"></i>
+                    <span class="menu-title text-truncate" data-i18n="Community Support">Community Support</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/healthcare_policies">
+                    <i data-feather="file-text"></i>
+                    <span class="menu-title text-truncate" data-i18n="Healthcare Policies">Healthcare Policies</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_tips">
+                    <i data-feather='cpu'></i>
+                    <span class="menu-title text-truncate" data-i18n="Smart Health Tips">Smart Health Tips</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_devices">
+                    <i data-feather='watch'></i>
+                    <span class="menu-title text-truncate" data-i18n="Connect Health Devices">Connect Health Devices</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/contact_us">
+                    <i data-feather='phone'></i>
+                    <span class="menu-title text-truncate" data-i18n="Get in Touch">Get in Touch</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+<!-- END: Main Menu-->
+ 
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">Coverage Benefits</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="coverage-benefits.html">Coverage Benefits</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">Coverage-Benefits
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <section id="card-images">
+                    <h5 class="mt-3 mb-2">Government Health Insurance Scheme</h5>
+                    <div class="row">
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card border-0 text-white">
+                                <img class="card-img" src="/static/app-assets/images/slider/10.jpg" alt="Card image" />
+                                <div class="card-img-overlay bg-overlay">
+                                    <h4 class="card-title text-white">Mukhyamantri Amrutam Yojana</h4>
+                                    <p class="card-text">
+                                        
+                                    </p>In this scheme, it covers medicines, diagnostic expenses, medical treatment, and pre-hospitalization costs.
+                                    <p class="card-text">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </p>
+                                    <a href="#" class="btn btn-outline-danger">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card border-0 text-white">
+                                <img class="card-img" src="/static/app-assets/images/slider/10.jpg" alt="Card image" />
+                                <div class="card-img-overlay bg-overlay">
+                                    <h4 class="card-title text-white">Ayushman Bharat Yojana</h4>
+                                    <p class="card-text">
+                                        
+                                    </p>In this scheme, it covers medicines, diagnostic expenses, medical treatment, and pre-hospitalization costs.
+                                    <p class="card-text">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </p>
+                                    <a href="#" class="btn btn-outline-danger">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card border-0 text-white">
+                                <img class="card-img" src="/static/app-assets/images/slider/10.jpg" alt="Card image" />
+                                <div class="card-img-overlay bg-overlay">
+                                    <h4 class="card-title text-white">Mahatma Jyotiba Phule Jan Arogya Yojana</h4>
+                                    <p class="card-text">
+                                        
+                                    </p>In this scheme, it covers medicines, diagnostic expenses, medical treatment, and pre-hospitalization costs.
+                                    <p class="card-text">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </p>
+                                    <a href="#" class="btn btn-outline-danger">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card border-0 text-white">
+                                <img class="card-img" src="/static/app-assets/images/slider/10.jpg" alt="Card image" />
+                                <div class="card-img-overlay bg-overlay">
+                                    <h4 class="card-title text-white">Yeshasvini Health Insurance Scheme</h4>
+                                    <p class="card-text">
+                                        
+                                    </p>In this scheme, it covers medicines, diagnostic expenses, medical treatment, and pre-hospitalization costs.
+                                    <p class="card-text">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </p>
+                                    <a href="#" class="btn btn-outline-danger">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card border-0 text-white">
+                                <img class="card-img" src="/static/app-assets/images/slider/10.jpg" alt="Card image" />
+                                <div class="card-img-overlay bg-overlay">
+                                    <h4 class="card-title text-white">West Bengal Health Scheme</h4>
+                                    <p class="card-text">
+                                        
+                                    </p>In this scheme, it covers medicines, diagnostic expenses, medical treatment, and pre-hospitalization costs.
+                                    <p class="card-text">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </p>
+                                    <a href="#" class="btn btn-outline-danger">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card border-0 text-white">
+                                <img class="card-img" src="/static/app-assets/images/slider/10.jpg" alt="Card image" />
+                                <div class="card-img-overlay bg-overlay">
+                                    <h4 class="card-title text-white">Universal Health Insurance Scheme</h4>
+                                    <p class="card-text">
+                                        
+                                    </p>In this scheme, it covers medicines, diagnostic expenses, medical treatment, and pre-hospitalization costs.
+                                    <p class="card-text">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </p>
+                                    <a href="#" class="btn btn-outline-danger">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card border-0 text-white">
+                                <img class="card-img" src="/static/app-assets/images/slider/10.jpg" alt="Card image" />
+                                <div class="card-img-overlay bg-overlay">
+                                    <h4 class="card-title text-white">Chief Minister’s Comprehensive </h4>
+                                    <p class="card-text">
+                                        
+                                    </p>In this scheme, it covers medicines, diagnostic expenses, medical treatment, and pre-hospitalization costs.
+                                    <p class="card-text">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </p>
+                                    <a href="#" class="btn btn-outline-danger">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card border-0 text-white">
+                                <img class="card-img" src="/static/app-assets/images/slider/10.jpg" alt="Card image" />
+                                <div class="card-img-overlay bg-overlay">
+                                    <h4 class="card-title text-white">Janshree Bima Yojana</h4>
+                                    <p class="card-text">
+                                        
+                                    </p>In this scheme, it covers medicines, diagnostic expenses, medical treatment, and pre-hospitalization costs.
+                                    <p class="card-text">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </p>
+                                    <a href="#" class="btn btn-outline-danger">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card border-0 text-white">
+                                <img class="card-img" src="/static/app-assets/images/slider/10.jpg" alt="Card image" />
+                                <div class="card-img-overlay bg-overlay">
+                                    <h4 class="card-title text-white">Employment State Insurance Scheme</h4>
+                                    <p class="card-text">
+                                        
+                                    </p>In this scheme, it covers medicines, diagnostic expenses, medical treatment, and pre-hospitalization costs.
+                                    <p class="card-text">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </p>
+                                    <a href="#" class="btn btn-outline-danger">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card border-0 text-white">
+                                <img class="card-img" src="/static/app-assets/images/slider/10.jpg" alt="Card image" />
+                                <div class="card-img-overlay bg-overlay">
+                                    <h4 class="card-title text-white">Central Government Health Scheme</h4>
+                                    <p class="card-text">
+                                        
+                                    </p>In this scheme, it covers medicines, diagnostic expenses, medical treatment, and pre-hospitalization costs.
+                                    <p class="card-text">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </p>
+                                    <a href="#" class="btn btn-outline-danger">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card border-0 text-white">
+                                <img class="card-img" src="/static/app-assets/images/slider/10.jpg" alt="Card image" />
+                                <div class="card-img-overlay bg-overlay">
+                                    <h4 class="card-title text-white">Aam Aadmi Bima Yojana</h4>
+                                    <p class="card-text">
+                                        
+                                    </p>In this scheme, it covers medicines, diagnostic expenses, medical treatment, and pre-hospitalization costs.
+                                    <p class="card-text">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </p>
+                                    <a href="#" class="btn btn-outline-danger">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card border-0 text-white">
+                                <img class="card-img" src="/static/app-assets/images/slider/10.jpg" alt="Card image" />
+                                <div class="card-img-overlay bg-overlay">
+                                    <h4 class="card-title text-white">Pradhan Mantri Suraksha Bima Yojana</h4>
+                                    <p class="card-text">
+                                        
+                                    </p>In this scheme, it covers medicines, diagnostic expenses, medical treatment, and pre-hospitalization costs.
+                                    <p class="card-text">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </p>
+                                    <a href="#" class="btn btn-outline-danger">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+   {% endblock %}

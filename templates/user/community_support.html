@@ -1,0 +1,316 @@
+{% extends '/user/base.html' %}
+{% block body %}
+ <!-- BEGIN: Main Menu-->
+ <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item me-auto"><a class="navbar-brand" href="index.html">
+                <span class="brand-logo">
+                    <!-- <img src="/static/app-assets/images/logo/logo.png" alt="logo"> -->
+                    </span>
+                    <h2 class="brand-text">Swasthyakundli</h2>
+                </a></li>
+        </ul>
+    </div>
+    <div class="shadow-bottom"></div>
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User">
+                    <i data-feather="home"></i>
+                    <span class="menu-title text-truncate" data-i18n="Home">Dashboard</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/record">
+                    <i data-feather="clipboard"></i>
+                    <span class="menu-title text-truncate" data-i18n="Record Your Health Data">Personal Data</span>
+                </a>
+            </li>
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User/recordData">
+                    <i data-feather="clipboard"></i>
+                    <span class="menu-title text-truncate" data-i18n="Record Your Health Data">Record Your Health Data</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_history">
+                    <i data-feather="book"></i>
+                    <span class="menu-title text-truncate" data-i18n="Health History">Health History</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/family_health_tree">
+                    <i data-feather='list'></i>
+                    <span class="menu-title text-truncate" data-i18n="Family Health Tree">Family Health Tree</span>
+                </a>
+            </li>
+            
+            <li class="  nav-item">
+                <a class="d-flex align-items-center" href="/User/care_centers">
+                    <i data-feather='plus-square'></i>
+                    <span class="menu-title text-truncate" data-i18n="Care Centers">Care Centers</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/care_team">
+                    <i data-feather="users"></i>
+                    <span class="menu-title text-truncate" data-i18n="Your Care Team">Your Care Team</span>
+                </a>
+            </li>
+            
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="/User/blood_centers">
+                    <i data-feather='plus-square'></i>
+                    <span class="menu-title text-truncate" data-i18n="Care Centers">Blood Centers</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/coverage_benefits">
+                    <i data-feather="shield"></i>
+                    <span class="menu-title text-truncate" data-i18n="Coverage Benefits">Coverage Benefits</span>
+                </a>
+            </li>
+            
+            <li class="active nav-item">
+                <a class="d-flex align-items-center" href="/User/community_support">
+                    <i data-feather="heart"></i>
+                    <span class="menu-title text-truncate" data-i18n="Community Support">Community Support</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/healthcare_policies">
+                    <i data-feather="file-text"></i>
+                    <span class="menu-title text-truncate" data-i18n="Healthcare Policies">Healthcare Policies</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_tips">
+                    <i data-feather='cpu'></i>
+                    <span class="menu-title text-truncate" data-i18n="Smart Health Tips">Smart Health Tips</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/health_devices">
+                    <i data-feather='watch'></i>
+                    <span class="menu-title text-truncate" data-i18n="Connect Health Devices">Connect Health Devices</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="/User/contact_us">
+                    <i data-feather='phone'></i>
+                    <span class="menu-title text-truncate" data-i18n="Get in Touch">Get in Touch</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+<!-- END: Main Menu-->
+ <!-- BEGIN: Content-->
+ <div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-header row">
+            <div class="content-header-left col-md-9 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="col-12">
+                        <h2 class="content-header-title float-start mb-0">Community Support</h2>
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="community-support.html">Community Support</a>
+                                </li>
+                                <li class="breadcrumb-item active">Community-Support
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <section id="modal-examples">
+                <div class="row">
+                    <!-- add new card  -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i data-feather="credit-card" class="font-large-2 mb-1"></i>
+                                <h5 class="card-title">Doctors for You</h5>
+                                <p class="card-text">
+                                    Quickly collect the credit card details, built in input mask and form validation support.
+                                </p>
+
+                                <!-- modal trigger button -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewCard">
+                                    Show
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / add new card  -->
+                    <!-- add new card  -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i data-feather="credit-card" class="font-large-2 mb-1"></i>
+                                <h5 class="card-title">Swasthya Swaraj</h5>
+                                <p class="card-text">
+                                    Quickly collect the credit card details, built in input mask and form validation support.
+                                </p>
+
+                                <!-- modal trigger button -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewCard">
+                                    Show
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / add new card  -->
+                    <!-- add new card  -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i data-feather="credit-card" class="font-large-2 mb-1"></i>
+                                <h5 class="card-title">CanKids KidsCan</h5>
+                                <p class="card-text">
+                                    Quickly collect the credit card details, built in input mask and form validation support.
+                                </p>
+
+                                <!-- modal trigger button -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewCard">
+                                    Show
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / add new card  -->
+                    <!-- add new card  -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i data-feather="credit-card" class="font-large-2 mb-1"></i>
+                                <h5 class="card-title"> Foundation for Mother and Child Health</h5>
+                                <p class="card-text">
+                                    Quickly collect the credit card details, built in input mask and form validation support.
+                                </p>
+
+                                <!-- modal trigger button -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewCard">
+                                    Show
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / add new card  -->
+                    <!-- add new card  -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i data-feather="credit-card" class="font-large-2 mb-1"></i>
+                                <h5 class="card-title">Swasth Foundation</h5>
+                                <p class="card-text">
+                                    Quickly collect the credit card details, built in input mask and form validation support.
+                                </p>
+
+                                <!-- modal trigger button -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewCard">
+                                    Show
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / add new card  -->
+                    <!-- add new card  -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i data-feather="credit-card" class="font-large-2 mb-1"></i>
+                                <h5 class="card-title">Rural Health Care Foundation </h5>
+                                <p class="card-text">
+                                    Quickly collect the credit card details, built in input mask and form validation support.
+                                </p>
+
+                                <!-- modal trigger button -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewCard">
+                                    Show
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / add new card  -->
+                </div>
+            </section>
+            <!-- add new card modal  -->
+            <div class="modal fade" id="addNewCard" tabindex="-1" aria-labelledby="addNewCardTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-transparent">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body px-sm-5 mx-50 pb-5">
+                            <h1 class="text-center mb-1" id="addNewCardTitle">Apply for Help</h1>
+                            <p class="text-center">Please fill out the form below to apply for assistance.</p>
+                        
+                            <!-- Form -->
+                            <form id="applyForHelpForm" class="row gy-1 gx-2 mt-75" onsubmit="return false">
+                                <div class="col-12">
+                                    <label class="form-label" for="fullName">Your Full Name</label>
+                                    <input id="fullName" name="fullName" class="form-control" type="text" placeholder="John Doe" />
+                                </div>
+                        
+                                <div class="col-12 col-md-12">
+                                    <label class="form-label" for="dateOfRequest">Date of Request</label>
+                                    <input id="dateOfRequest" name="dateOfRequest" class="form-control" type="text" placeholder="MM/DD/YYYY" />
+                                </div>
+                        
+                                <div class="col-12 col-md-12">
+                                    <label class="form-label" for="reasonForHelp">Reason for Help</label>
+                                    <input id="reasonForHelp" name="reasonForHelp" class="form-control" type="text" placeholder="Briefly describe your situation" />
+                                </div>
+                        
+                                <div class="col-12">
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check form-switch form-check-primary me-25">
+                                            <input type="checkbox" class="form-check-input" id="saveApplicationDetails" checked />
+                                            <label class="form-check-label" for="saveApplicationDetails">
+                                                <span class="switch-icon-left"><i data-feather="check"></i></span>
+                                                <span class="switch-icon-right"><i data-feather="x"></i></span>
+                                            </label>
+                                        </div>
+                                        <label class="form-check-label fw-bolder" for="saveApplicationDetails">Save Application Details for Future Reference?</label>
+                                    </div>
+                                </div>
+                        
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary me-1 mt-1">Submit Application</button>
+                                    <button type="reset" class="btn btn-outline-secondary mt-1" data-bs-dismiss="modal" aria-label="Close">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!--/ add new card modal  -->
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+{% endblock %}
+    
